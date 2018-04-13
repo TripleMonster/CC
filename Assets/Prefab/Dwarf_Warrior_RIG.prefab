@@ -432,6 +432,8 @@ GameObject:
   - component: {fileID: 114907819025653036}
   - component: {fileID: 136550416781969254}
   - component: {fileID: 195168180906433016}
+  - component: {fileID: 114466796301079648}
+  - component: {fileID: 114023274391739080}
   m_Layer: 0
   m_Name: Dwarf_Warrior_RIG
   m_TagString: Untagged
@@ -1077,6 +1079,29 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114023274391739080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922372655691728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114466796301079648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922372655691728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WayPoints: []
 --- !u!114 &114907819025653036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1088,15 +1113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WayPoints:
-  - {x: 39.9, y: 0, z: -5.76}
-  - {x: 41.9, y: 0, z: -5.76}
-  - {x: 42.9, y: 0, z: -5.76}
-  - {x: 43.9, y: 0, z: -5.76}
-  - {x: 44.9, y: 0, z: -5.76}
-  - {x: 45.9, y: 0, z: -5.76}
-  - {x: 46.9, y: 0, z: -5.76}
-  - {x: 48.9, y: 0, z: -5.76}
 --- !u!136 &136550416781969254
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -19181,7 +19181,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4845894482543088, guid: 2462f871ec0b84780b5d85b1b22b267e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 44.14
+      value: 43.64
       objectReference: {fileID: 0}
     - target: {fileID: 4845894482543088, guid: 2462f871ec0b84780b5d85b1b22b267e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19189,7 +19189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4845894482543088, guid: 2462f871ec0b84780b5d85b1b22b267e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -5.83
+      value: -5.13
       objectReference: {fileID: 0}
     - target: {fileID: 4845894482543088, guid: 2462f871ec0b84780b5d85b1b22b267e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -20732,6 +20732,8 @@ GameObject:
   - component: {fileID: 2141005409}
   - component: {fileID: 2141005408}
   - component: {fileID: 2141005407}
+  - component: {fileID: 2141005412}
+  - component: {fileID: 2141005413}
   m_Layer: 11
   m_Name: Dwarf_Warrior_RIG
   m_TagString: Untagged
@@ -20787,15 +20789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WayPoints:
-  - {fileID: 1990470796}
-  - {fileID: 1444364961}
-  - {fileID: 759874081}
-  - {fileID: 1592745361}
-  - {fileID: 1487869839}
-  - {fileID: 674915227}
-  - {fileID: 1854126768}
-  - {fileID: 1434089373}
 --- !u!95 &2141005410
 Animator:
   serializedVersion: 3
@@ -20823,7 +20816,7 @@ Transform:
   m_PrefabInternal: {fileID: 1767516138}
   m_GameObject: {fileID: 2141005406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.14, y: 0, z: -5.83}
+  m_LocalPosition: {x: 43.64, y: 0, z: -5.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1730405289}
@@ -20831,3 +20824,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141005412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141005406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WayPoints:
+  - {fileID: 1990470796}
+  - {fileID: 1444364961}
+  - {fileID: 759874081}
+  - {fileID: 1592745361}
+  - {fileID: 1487869839}
+  - {fileID: 674915227}
+  - {fileID: 1854126768}
+  - {fileID: 1434089373}
+--- !u!114 &2141005413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141005406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

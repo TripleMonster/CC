@@ -14,6 +14,7 @@ using System;
 */
 
 namespace UnityEventUtils {
+    public class UEvent : UnityEvent { }
     public class UEvent_by : UnityEvent<byte> {}  
 	public class UEvent_bo : UnityEvent<bool> {}
     public class UEvent_f : UnityEvent<float> {}
