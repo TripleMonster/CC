@@ -27,18 +27,10 @@ public class HeroControl : MonoBehaviour
         
 	}
 
-    public void Activate () 
-    {
-        heroMove.Init();
-        heroAttack.Init();
-
-        heroAttack.foundTargetEvent.AddListener(OnFoundTarget);
-        heroAttack.lostTargetEvent.AddListener(OnLostTarget);
-    }
-
-    public void InActivate () 
+    public void Init()
     {
         gameObject.layer = 0;
+        StartCoroutine(DeployHero());
     }
 
     void OnFoundTarget()
@@ -49,5 +41,15 @@ public class HeroControl : MonoBehaviour
     void OnLostTarget()
     {
         heroMove.StartMove();
+    }
+
+    IEnumerator DeployHero()
+    {
+        yield return new WaitForSeconds(1.0f);
+        heroMove.Init();
+        heroAttack.Init();
+
+        heroAttack.foundTargetEvent.AddListener(OnFoundTarget);
+        heroAttack.lostTargetEvent.AddListener(OnLostTarget);
     }
 }

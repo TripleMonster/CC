@@ -14,7 +14,7 @@ public class Move : MonoBehaviour
 
     public void Init()
     {
-        currentPointIndex = FindNearestWaypointIndex();
+        StartMove();
     }
 
 	private void Awake()
@@ -63,6 +63,7 @@ public class Move : MonoBehaviour
         if (heroAgent.isStopped)
             heroAgent.isStopped = false;
         currentPointIndex = FindNearestWaypointIndex();
+        StartAutoMoveAlongWaypoint();
     }
 
     public void StopMove()

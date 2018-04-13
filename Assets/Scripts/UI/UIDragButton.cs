@@ -34,8 +34,6 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
     void CreateHeroInstance(Vector3 position) 
     {
         dragingHero = Instantiate<GameObject>(_HeroPrafab);
-        heroControl = dragingHero.GetComponent<HeroControl>();
-        heroControl.InActivate();
 
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, screenPos.z));
@@ -68,7 +66,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
             if (CheckIsPlaced(out hit))
             {
                 heroControl = dragingHero.GetComponent<HeroControl>();
-                heroControl.Activate();
+                heroControl.Init();
             }
             else
             {
