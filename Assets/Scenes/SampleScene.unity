@@ -2089,12 +2089,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 54984911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5171a015462045d7bfb661aa9e13327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _PlaneMnager: {fileID: 54323882}
+  _Waypoints:
+  - {fileID: 1990470796}
+  - {fileID: 1444364961}
+  - {fileID: 759874081}
+  - {fileID: 1592745361}
+  - {fileID: 1487869839}
+  - {fileID: 674915227}
+  - {fileID: 1854126768}
+  - {fileID: 1434089373}
 --- !u!4 &54984913
 Transform:
   m_ObjectHideFlags: 0
@@ -7383,7 +7392,6 @@ GameObject:
   - component: {fileID: 746495269}
   - component: {fileID: 746495268}
   - component: {fileID: 746495271}
-  - component: {fileID: 746495270}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -7442,19 +7450,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746495266}
---- !u!114 &746495270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 746495266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1016043330768424, guid: 7eecfe869afe046988de0df027401180,
-    type: 2}
 --- !u!114 &746495271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7466,7 +7461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 0}
+  _HeroPrafab: {fileID: 1375648448333494, guid: d6c091de705bb440c86b0d322ed46f5d,
+    type: 2}
 --- !u!43 &746999730
 Mesh:
   m_ObjectHideFlags: 0
@@ -13583,7 +13579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 2141005406}
+  _HeroPrafab: {fileID: 1922372655691728, guid: efd0f81d18350469c806620cb940b38f,
+    type: 2}
 --- !u!114 &1155822823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20394,7 +20391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1375648448333494, guid: d6c091de705bb440c86b0d322ed46f5d,
+  _HeroPrafab: {fileID: 1016043330768424, guid: 7eecfe869afe046988de0df027401180,
     type: 2}
 --- !u!43 &2078176469
 Mesh:
@@ -20835,15 +20832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WayPoints:
-  - {fileID: 1990470796}
-  - {fileID: 1444364961}
-  - {fileID: 759874081}
-  - {fileID: 1592745361}
-  - {fileID: 1487869839}
-  - {fileID: 674915227}
-  - {fileID: 1854126768}
-  - {fileID: 1434089373}
 --- !u!114 &2141005413
 MonoBehaviour:
   m_ObjectHideFlags: 0

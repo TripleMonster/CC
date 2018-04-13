@@ -5,7 +5,6 @@ using UnityEventUtils;
 
 public class Attack : MonoBehaviour 
 {
-
     [HideInInspector] public UEvent foundTargetEvent;
     [HideInInspector] public UEvent lostTargetEvent;
 

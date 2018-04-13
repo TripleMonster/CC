@@ -173,6 +173,11 @@ GameObject:
   - component: {fileID: 4456503694432596}
   - component: {fileID: 95210639921171528}
   - component: {fileID: 114912398817032118}
+  - component: {fileID: 114692883735571334}
+  - component: {fileID: 114071083105927218}
+  - component: {fileID: 114784887967796128}
+  - component: {fileID: 195920244215460422}
+  - component: {fileID: 136381274025595330}
   m_Layer: 0
   m_Name: Dwarf_Engineer_RIG
   m_TagString: Untagged
@@ -974,6 +979,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114071083105927218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375648448333494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114692883735571334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375648448333494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114784887967796128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375648448333494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114912398817032118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -991,6 +1029,19 @@ MonoBehaviour:
   attackRange: 7.5
   hitEffect: {fileID: 107352, guid: 93105f7b97c43b34c8eb44601e45d57c, type: 2}
   hideObject: {fileID: 1326726626428696}
+--- !u!136 &136381274025595330
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375648448333494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137461766526632566
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1057,3 +1108,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000059604645, y: 0.034524232, z: 0.15347871}
     m_Extent: {x: 0.97196275, y: 0.73470783, z: 1.0416347}
   m_DirtyAABB: 0
+--- !u!195 &195920244215460422
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375648448333494}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

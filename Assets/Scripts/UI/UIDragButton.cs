@@ -38,7 +38,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, screenPos.z));
         dragingHero.transform.position = new Vector3(worldPos.x, 0, worldPos.z);
-        dragingHero.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        //dragingHero.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         dragingHero.SetActive(false);
     }
 

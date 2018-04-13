@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour 
 {
-    public List<Transform> _WayPoints;
+    List<Transform> _WayPoints;
 
     Animator heroAnimator;
     UnityEngine.AI.NavMeshAgent heroAgent;
@@ -17,10 +17,27 @@ public class Move : MonoBehaviour
         StartMove();
     }
 
+    public void StartMove()
+    {
+        heroAnimator.SetBool("Run", true);
+        if (heroAgent.isStopped)
+            heroAgent.isStopped = false;
+        currentPointIndex = FindNearestWaypointIndex();
+        StartAutoMoveAlongWaypoint();
+    }
+
+    public void StopMove()
+    {
+        heroAgent.isStopped = true;
+        heroAnimator.SetBool("Run", false);
+    }
+
 	private void Awake()
 	{
         heroAnimator = GetComponent<Animator>();
         heroAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+        _WayPoints = GameManager.Instance.GetWaypoints();
 	}
 
 	void Update () 
@@ -47,7 +64,7 @@ public class Move : MonoBehaviour
         {
             Vector3 waypoint = _WayPoints[i].position;
             float distance = Vector3.Distance(transform.position, waypoint);
-            if (distance < lastDistance)
+            if (distance < lastDistance && i > currentPointIndex)
             {
                 lastDistance = distance;
                 index = i;
@@ -55,21 +72,6 @@ public class Move : MonoBehaviour
         }
 
         return index;
-    }
-
-    public void StartMove()
-    {
-        heroAnimator.SetBool("Run", true);
-        if (heroAgent.isStopped)
-            heroAgent.isStopped = false;
-        currentPointIndex = FindNearestWaypointIndex();
-        StartAutoMoveAlongWaypoint();
-    }
-
-    public void StopMove()
-    {
-        heroAgent.isStopped = true;
-        heroAnimator.SetBool("Run", false);
     }
 
     bool IsCheckedToMove()

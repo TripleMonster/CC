@@ -10,21 +10,11 @@ public class HeroControl : MonoBehaviour
     Move heroMove;
     Attack heroAttack;
 
-    void Start () 
-    {
-        
-	}
-
 	private void Awake()
 	{
         capsuleCollider = GetComponent<CapsuleCollider>();
         heroMove = GetComponent<Move>();
         heroAttack = GetComponent<Attack>();
-	}
-
-	void Update () 
-    {
-        
 	}
 
     public void Init()
