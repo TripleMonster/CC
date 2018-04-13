@@ -56,9 +56,27 @@ public class HeroControl : MonoBehaviour
         currentPointIndex++;
     }
 
+    int FindNearestWaypointIndex()
+    {
+        int index = 0;
+        float lastDistance = 999;
+        for (int i = 0; i < _WayPoints.Count; i++)
+        {
+            Vector3 waypoint = _WayPoints[i].position;
+            float distance = Vector3.Distance(transform.position, waypoint);
+            if (distance < lastDistance)
+            {
+                lastDistance = distance;
+                index = i;
+            }
+        }
+        Debug.Log("距离最近------index=" + index + "distance=" + lastDistance);
+        return index;
+    }
+
     void ToMove()
     {
-        heroAnimator.SetFloat("Speed", heroAgent.speed);
+        heroAnimator.SetBool("Run", true);
         heroAgent.destination = targetPos;
         heroAgent.isStopped = false;
     }
@@ -66,7 +84,7 @@ public class HeroControl : MonoBehaviour
     void StopMove()
     {
         heroAgent.isStopped = true;
-        heroAnimator.SetFloat("Speed", 0f);
+        heroAnimator.SetBool("Run", false);
     }
 
     bool IsCheckedToMove()
@@ -122,6 +140,7 @@ public class HeroControl : MonoBehaviour
     public void Activate () 
     {
         heroAnimator.enabled = true;
+        currentPointIndex = FindNearestWaypointIndex();
         StartAutoMoveAlongWaypoint();
     }
 
