@@ -1,0 +1,27 @@
+{
+    "name": "阿珂",
+    "price": 588,
+    "skills": [
+        {
+            "name": "死吻",
+            "cool": 0
+        },
+        {
+            "name": "弧光",
+            "cool": 4
+        },
+        {
+            "name": "瞬华",
+            "cool": 9
+        },
+        {
+            "name": "幻舞",
+            "cool": 20
+        }
+    ],
+    "attributes": {
+        "position": "打野",
+        "attackType": "物理",
+        "special": "暴击"
+    }
+}
