@@ -25,6 +25,7 @@ public class UICardButtonControl : MonoBehaviour {
             UIDragButton item = _CardButtons[i] as UIDragButton;
             item.index = i;
             item.cardSelectedEvent.AddListener(OnNoticeCardButtonSelected);
+            item.cardPlacedEvent.AddListener(OnNoticeCardPlaced);
         }
     }
 
@@ -38,6 +39,16 @@ public class UICardButtonControl : MonoBehaviour {
                 item.DoCardExitSelectedAction();
                 lastSelectedIndex = index;
             }
+        }
+    }
+
+    void OnNoticeCardPlaced(int index)
+    {
+        UIDragButton item = _CardButtons[index] as UIDragButton;
+        if (item != null)
+        {
+            item.ChangeButtonImage(_NextCardImage.sprite);
+            PreviewNextCard();
         }
     }
 
