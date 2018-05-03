@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UICardButtonControl : MonoBehaviour {
-
     public List<UIDragButton> _CardButtons;
     public Image _NextCardImage;
 
