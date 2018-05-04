@@ -8,14 +8,23 @@ public class UICardButtonControl : MonoBehaviour {
     public Image _NextCardImage;
 
     private int lastSelectedIndex;
+    private List<Image> cardPools;
 
 	void Start () {
         InitCardButtonList();
+        //SpriteManager.Instance.loadSuc.AddListener(PreviewNextCard);
+        //StartCoroutine(SpriteManager.Instance.LoadSpriteFromLocalPath());
+        PreviewNextCard();
     }
 
     void Update () {
 		
 	}
+
+    void InitCardPools()
+    {
+        
+    }
 
     void InitCardButtonList() 
     {
@@ -53,6 +62,19 @@ public class UICardButtonControl : MonoBehaviour {
 
     void PreviewNextCard()
     {
+        Debug.Log("PreviewNextCard---------------1");
+        //Sprite sprite = SpriteManager.Instance.GetSprite();
 
+        //if (sprite != null)
+        //{
+        //    Debug.Log("PreviewNextCard---------------2");
+        //    _NextCardImage.sprite = sprite;    
+        //}
+
+        Sprite sprite = SpriteManager.Instance.TestSprite();
+        if (sprite != null)
+        {
+            _NextCardImage.sprite = sprite;
+        }
     }
 }
