@@ -4,13 +4,15 @@ using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
 
-public class FileManager : Singleton<FileManager> {
+public class FileManager : Singleton<FileManager> 
+{
 
     readonly string outputJsonFilePath = Application.dataPath + "/Output/Json/";
 
     private FileManager() {}
 
-    public T LoadJson<T>(string path) {
+    public T LoadJson<T>(string path) 
+    {
         string filePath = Application.dataPath + path;
 
         if (!File.Exists(filePath))
@@ -23,7 +25,8 @@ public class FileManager : Singleton<FileManager> {
         return jsonObj;
     }
 
-    public void OutPutJsonFile(string name, string text) {
+    public void OutPutJsonFile(string name, string text) 
+    {
         StreamWriter writer;
         FileInfo fileInfo = new FileInfo(outputJsonFilePath + name);
         if (!fileInfo.Exists)

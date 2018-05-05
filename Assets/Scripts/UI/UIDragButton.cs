@@ -14,6 +14,8 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
     public GameObject _HeroPrafab;
 
     [HideInInspector] public UEvent_i cardSelectedEvent = new UEvent_i();
+    [HideInInspector] public UEvent_i cardPlacedEvent = new UEvent_i();
+
     public CardSelectedState currentCardSelectedState{ get; private set; }
     public int index { get; set; }
 
@@ -133,6 +135,8 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(pos.x, pos.y, screenPos.z));
         dragingHero.transform.position = new Vector3(worldPos.x, 0, worldPos.z);
+
+        cardPlacedEvent.Invoke(index);
     }
 
     bool CheckIsPlaced (out RaycastHit hit) 
@@ -171,6 +175,12 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
                             });
     }
 
+    public void ChangeButtonImage(Sprite sprite)
+    {
+        Image image = GetComponent<Image>();
+        image.sprite = sprite;
+    }
+
     public override void OnPointerDown(PointerEventData eventData)
     {
         if (currentCardSelectedState == CardSelectedState.NORMAL) 
@@ -181,5 +191,6 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     public override void OnPointerUp(PointerEventData eventData)
     {
+        
     }
 }
