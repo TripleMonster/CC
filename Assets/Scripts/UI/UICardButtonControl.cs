@@ -8,22 +8,20 @@ public class UICardButtonControl : MonoBehaviour {
     public Image _NextCardImage;
 
     private int lastSelectedIndex;
-    private List<Image> cardPools;
+    private List<Sprite> cardPools = new List<Sprite>();
+    string[] cards = { "archers", "arrows", "baby-dragon", "balloon", "bandit", "barbarian-hut", "barbarians", "bomb-tower"};
+    int completeCount;
 
-	void Start () {
+	void Start () 
+    {
         InitCardButtonList();
-        //SpriteManager.Instance.loadSuc.AddListener(PreviewNextCard);
-        //StartCoroutine(SpriteManager.Instance.LoadSpriteFromLocalPath());
-        PreviewNextCard();
+        SpriteManager.Instance.loadSuc.AddListener(PreviewNextCard);
+        InitCardPools();
     }
 
-    void Update () {
-		
-	}
-
-    void InitCardPools()
+	void InitCardPools()
     {
-        
+        StartCoroutine(SpriteManager.Instance.LoadSpriteFromResourcesByName("balloon"));
     }
 
     void InitCardButtonList() 
@@ -62,19 +60,24 @@ public class UICardButtonControl : MonoBehaviour {
 
     void PreviewNextCard()
     {
-        Debug.Log("PreviewNextCard---------------1");
-        //Sprite sprite = SpriteManager.Instance.GetSprite();
-
-        //if (sprite != null)
-        //{
-        //    Debug.Log("PreviewNextCard---------------2");
-        //    _NextCardImage.sprite = sprite;    
-        //}
-
-        Sprite sprite = SpriteManager.Instance.TestSprite();
+        Sprite sprite = SpriteManager.Instance.GetSprite();
         if (sprite != null)
         {
             _NextCardImage.sprite = sprite;
         }
     }
+
+    void LoadCardsCompleted()
+    {
+        Sprite sprite = SpriteManager.Instance.GetSprite();
+        cardPools.Add(sprite);
+
+        if (completeCount++ == cards.Length)
+        {
+            PreviewNextCard();
+            InitCardButtonList();
+        }
+    }
+
+
 }

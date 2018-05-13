@@ -7,10 +7,12 @@ using UnityEventUtils;
 public class SpriteManager : Singleton<SpriteManager>
 {
     private readonly string loadSpritePath = Application.dataPath + "/Texture/Sprites/bowler.png";
+    private readonly string spriteRsourcesPath = "Sprites/";
 
     private SpriteManager() {}
 
     Sprite sprite;
+    ResourceRequest resourceRequest;
     [HideInInspector] public UEvent loadSuc = new UEvent();
 
     public List<Sprite> LoadsSpritesFromLocalPath()
@@ -51,5 +53,19 @@ public class SpriteManager : Singleton<SpriteManager>
         texture.LoadImage(bytes);
         sprite = Sprite.Create(texture, new Rect(0, 0, 302, 363), Vector2.zero);
         return sprite;
+    }
+
+    public IEnumerator LoadSpriteFromResourcesByName(string name)
+    {
+        string fullPath = spriteRsourcesPath + name;
+        Debug.Log("fullpath = " + fullPath);
+        resourceRequest = Resources.LoadAsync(fullPath, typeof(Sprite));
+
+        while (!resourceRequest.isDone)
+            yield return resourceRequest;
+
+        sprite = resourceRequest.asset as Sprite;
+        resourceRequest = null;
+        loadSuc.Invoke();
     }
 }
