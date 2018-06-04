@@ -19,7 +19,7 @@ public class FileManager : Singleton<FileManager>
             Debug.LogError("文件路径:" + filePath + "不存在!!!");
         
         string jsonData = File.ReadAllText(filePath);
-        TextAsset jsonText = new TextAsset(jsonData);
+        TextAsset jsonText = new TextAsset();
         //T jsonObj = JsonUtility.FromJson<T>(jsonText.text);
         T jsonObj = JsonConvert.DeserializeObject<T>(jsonText.text);
         return jsonObj;
