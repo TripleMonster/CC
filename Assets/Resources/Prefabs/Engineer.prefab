@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 195920244215460422}
   - component: {fileID: 136381274025595330}
   m_Layer: 0
-  m_Name: Dwarf_Engineer_RIG
+  m_Name: Engineer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

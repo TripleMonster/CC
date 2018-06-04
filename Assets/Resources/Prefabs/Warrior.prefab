@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 114466796301079648}
   - component: {fileID: 114023274391739080}
   m_Layer: 0
-  m_Name: Dwarf_Warrior_RIG
+  m_Name: Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WayPoints: []
 --- !u!114 &114907819025653036
 MonoBehaviour:
   m_ObjectHideFlags: 1
