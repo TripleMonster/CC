@@ -15,13 +15,13 @@ public class UICardButtonControl : MonoBehaviour {
 	void Start () 
     {
         InitCardButtonList();
-        SpriteManager.Instance.loadSuc.AddListener(PreviewNextCard);
+
         InitCardPools();
     }
 
 	void InitCardPools()
     {
-        StartCoroutine(SpriteManager.Instance.LoadSpriteFromResourcesByName("balloon"));
+        
     }
 
     void InitCardButtonList() 
@@ -60,23 +60,12 @@ public class UICardButtonControl : MonoBehaviour {
 
     void PreviewNextCard()
     {
-        Sprite sprite = SpriteManager.Instance.GetSprite();
-        if (sprite != null)
-        {
-            _NextCardImage.sprite = sprite;
-        }
+        
     }
 
     void LoadCardsCompleted()
     {
-        Sprite sprite = SpriteManager.Instance.GetSprite();
-        cardPools.Add(sprite);
-
-        if (completeCount++ == cards.Length)
-        {
-            PreviewNextCard();
-            InitCardButtonList();
-        }
+       
     }
 
 
