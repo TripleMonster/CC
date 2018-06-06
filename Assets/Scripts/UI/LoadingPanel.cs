@@ -4,14 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Loading))]
 public class LoadingPanel : MonoBehaviour {
     [SerializeField] private Slider _loadingSlider;
 
     enum LoadingStep { LOADING_START, LOADING_CONFIG, LOADING_ATLAS, LOADING_PREFAB, LOADING_AUDIO, LOADING_END }
     LoadingStep curStep;
     bool isStartLoading = true;
+    private Loading loading;
 
-	void Start () 
+    private void Awake()
+    {
+        loading = GetComponent<Loading>();
+        if (loading)
+            loading.loadingCompleted.AddListener(LoadingCompleted);
+    }
+
+    void Start () 
 	{
         curStep = LoadingStep.LOADING_START;
 	}
@@ -39,38 +48,46 @@ public class LoadingPanel : MonoBehaviour {
             case LoadingStep.LOADING_START:
                 {
                     curStep = LoadingStep.LOADING_CONFIG;
+                    _loadingSlider.value += 0.1f;
                 }
                 break;
             case LoadingStep.LOADING_CONFIG:
                 {
                     curStep = LoadingStep.LOADING_ATLAS;
-                    //LoadingConfigs();
+                    loading.LoadingConfig();
                 }
                 break;
             case LoadingStep.LOADING_ATLAS:
                 {
                     curStep = LoadingStep.LOADING_PREFAB;
-                    //LoadingAtlases();
+                    loading.LoadingAtlas();
                 }
                 break;
             case LoadingStep.LOADING_PREFAB:
                 {
                     curStep = LoadingStep.LOADING_AUDIO;
-                    _loadingSlider.value += 0.2f;
+                    loading.LoadingPrefab();
                 }
                 break;
             case LoadingStep.LOADING_AUDIO:
                 {
                     curStep = LoadingStep.LOADING_END;
-                    _loadingSlider.value += 0.2f;
+                    loading.LoadingAudio();
                 }
                 break;
             case LoadingStep.LOADING_END:
                 {
+                    _loadingSlider.value += 0.1f;
                     isStartLoading = false;
                     AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
                 }
                 break;
         }      
+    }
+
+    void LoadingCompleted(float progress)
+    {
+        Debug.Log("加载完成了:" + progress.ToString());
+        _loadingSlider.value += progress;
     }
 }

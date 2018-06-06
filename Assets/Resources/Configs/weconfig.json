@@ -1,0 +1,15 @@
+{
+	"name": "小花",
+	"trophy": 3300,
+	"level":11,
+	"cards":[
+		"archers",
+		"bandit",
+		"barbarians",
+		"bats",
+		"bowler",
+		"arrows",
+		"inferno-tower",
+		"baby-dragon"
+	] 
+}

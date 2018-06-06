@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlaneMnager))]
+[RequireComponent(typeof(ResourcesManager))]
 public class GameManager : MonoSigleton<GameManager> {
 
     public PlaneMnager _PlaneMnager;

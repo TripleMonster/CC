@@ -1,0 +1,85 @@
+{
+  "cards":
+  {
+  "archers": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "bandit": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "barbarians": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "bats": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "bowler": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "arrows": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "inferno-tower": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "baby-dragon": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "balloon": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "barbarian-hut": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "bomb-tower": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "bomber": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "cannon-cart": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "cannon": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "clone": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "dark-prince": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  }
+}
+}

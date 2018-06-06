@@ -1,0 +1,15 @@
+{
+	"name": "小草",
+	"trophy": 4000,
+	"level":12,
+	"cards":[
+		"balloon",
+		"barbarian-hut",
+		"bomb-tower",
+		"bomber",
+		"cannon-cart",
+		"cannon",
+		"clone",
+		"dark-prince"
+	] 
+}

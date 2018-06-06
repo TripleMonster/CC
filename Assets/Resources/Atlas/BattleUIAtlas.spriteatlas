@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BattleUIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: fb71d00302c524478976917c00aebafb, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: dd44fd2e63f1b42cd9823fb67a6e3ad6, type: 3}
+  - {fileID: 21300000, guid: c6af36e9dbaf14c64940e38fa7b96eec, type: 3}
+  - {fileID: 21300000, guid: d54c387595d6842e991e268a09dfc981, type: 3}
+  - {fileID: 21300000, guid: 55ab26163fbb64b91a82fc92f271e17e, type: 3}
+  - {fileID: 21300000, guid: 204c2254c1bfc46078c296d7f7e91c50, type: 3}
+  - {fileID: 21300000, guid: c65d3095269014c4e87f020b6876b106, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ui_sprite_226
+  - ui_sprite_072
+  - ui_sprite_197
+  - ui_sprite_198
+  - ui_sprite_199
+  - ui_sprite_883
+  m_Tag: BattleUIAtlas
+  m_IsVariant: 0
