@@ -12,7 +12,6 @@ public class triggerProjectile : MonoBehaviour {
 
 	public GameObject hitEffect;
 
-	public GameObject hideObject;
 
 	public void shoot()
 	{
@@ -24,10 +23,6 @@ public class triggerProjectile : MonoBehaviour {
 	// shoot loop
 	public IEnumerator lerpyLoop(GameObject projectileInstance)
 	{
-		if (hideObject)
-			hideObject.SetActive(false);
-
-
 		var victim = transform.position + transform.forward * attackRange;
 
 		float progress = 0;
@@ -55,9 +50,6 @@ public class triggerProjectile : MonoBehaviour {
 
 		if (hitEffect)
 			Instantiate(hitEffect, victim, transform.rotation);
-
-		if (hideObject)
-			hideObject.SetActive(true);
 
 		yield return null;
 	}

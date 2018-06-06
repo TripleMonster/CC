@@ -51,7 +51,7 @@
     "blood": 500,
     "attack": 100
   },
-  "bomb-tower": {
+  "dark-prince": {
     "cost": 3,
     "blood": 500,
     "attack": 100
@@ -61,22 +61,22 @@
     "blood": 500,
     "attack": 100
   },
-  "cannon-cart": {
+  "electro-wizard": {
     "cost": 3,
     "blood": 500,
     "attack": 100
   },
-  "cannon": {
+  "giant-skeleton": {
     "cost": 3,
     "blood": 500,
     "attack": 100
   },
-  "clone": {
+  "musketeer": {
     "cost": 3,
     "blood": 500,
     "attack": 100
   },
-  "dark-prince": {
+  "wizard": {
     "cost": 3,
     "blood": 500,
     "attack": 100
