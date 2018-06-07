@@ -60,15 +60,15 @@ public class DataManager : Singleton<DataManager>
             }
         }
 
-        foreach (var cardName in weCamp.cards)
-        {
-            if (cardName != null)
-            {
-                var sprite = spriteAtlas.GetSprite(cardName);
-                if (sprite != null)
-                    battleAllCardSprites.Add(cardName, sprite);
-            }
-        }
+        //foreach (var cardName in weCamp.cards)
+        //{
+        //    if (cardName != null)
+        //    {
+        //        var sprite = spriteAtlas.GetSprite(cardName);
+        //        if (sprite != null)
+        //            battleAllCardSprites.Add(cardName, sprite);
+        //    }
+        //}
     }
 
     #endregion

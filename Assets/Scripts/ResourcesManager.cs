@@ -7,14 +7,14 @@ public class ResourcesManager : Singleton<ResourcesManager>
 {
     private ResourcesManager() {}
 
-    public void LoadAsset<T>(int tag, string assetPath, Action<int, T> succeeded, Action<string> failed) where T : UnityEngine.Object
+    public void LoadAsset<T>(string assetPath, Action<T> succeeded, Action<string> failed) where T : UnityEngine.Object 
     {
         ResourceRequest resourceRequest = Resources.LoadAsync<T>(assetPath);
-        var cor = RequestCoroutine(tag, assetPath, resourceRequest, succeeded, failed);
-        //GameManager.mainThreadDispatcher.Commit(cor);
+        var cor = RequestCoroutine(assetPath, resourceRequest, succeeded, failed);
+        GameManager.Instance.mainThreadDispatcher.Commit(cor);
     }
 
-    private IEnumerator RequestCoroutine<T>(int tag, string assetPath, ResourceRequest request, Action<int, T> succeeded, Action<string> failed) where T : UnityEngine.Object
+    private IEnumerator RequestCoroutine<T>(string assetPath, ResourceRequest request, Action<T> succeeded, Action<string> failed) where T : UnityEngine.Object
     {
         while (!request.isDone)
             yield return null;
@@ -32,6 +32,6 @@ public class ResourcesManager : Singleton<ResourcesManager>
             yield break;
         }
 
-        succeeded(tag, casted);
+        succeeded(casted);
     }
 }

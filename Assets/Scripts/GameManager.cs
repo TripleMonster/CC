@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlaneMnager))]
-[RequireComponent(typeof(ResourcesManager))]
 public class GameManager : MonoSigleton<GameManager> {
 
     public PlaneMnager _PlaneMnager;
     public List<Transform> _Waypoints;
 
-	void Start () 
+    public TTMainThreadDispatcher mainThreadDispatcher;
+
+    private void Awake()
+    {
+        mainThreadDispatcher = GetComponent<TTMainThreadDispatcher>();
+    }
+
+    void Start () 
     {
         
 	}

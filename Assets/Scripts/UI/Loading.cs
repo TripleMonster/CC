@@ -24,27 +24,27 @@ public class Loading : MonoBehaviour
 
     public void LoadingConfig()
     {
-        ResourcesManager.Instance.LoadAsset<TextAsset>((int)ConfigTag.CARD, "Configs/cardconfig", LoadingConfigCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<TextAsset>("Configs/cardconfig", LoadingConfigCompleted, (result) => {
             Debug.Log(result);
         });
-        ResourcesManager.Instance.LoadAsset<TextAsset>((int)ConfigTag.KINGTOWER, "Configs/kingTower", LoadingConfigCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<TextAsset>("Configs/kingTower", LoadingConfigCompleted, (result) => {
             Debug.Log(result);
         });
-        ResourcesManager.Instance.LoadAsset<TextAsset>((int)ConfigTag.ENEMY, "Configs/enemyconfig", LoadingConfigCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<TextAsset>("Configs/enemyconfig", LoadingConfigCompleted, (result) => {
             Debug.Log(result);
         });
-        ResourcesManager.Instance.LoadAsset<TextAsset>((int)ConfigTag.WE, "Configs/weconfig", LoadingConfigCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<TextAsset>("Configs/weconfig", LoadingConfigCompleted, (result) => {
             Debug.Log(result);
         });
     }
 
     public void LoadingAtlas()
     {
-        ResourcesManager.Instance.LoadAsset<SpriteAtlas>((int)AtlasTag.CARD, "Atlas/CardsAtlas", LoadingAtlasCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<SpriteAtlas>("Atlas/CardsAtlas", LoadingAtlasCompleted, (result) => {
             Debug.Log(result);
         });
 
-        ResourcesManager.Instance.LoadAsset<SpriteAtlas>((int)AtlasTag.CARD, "Atlas/BattleUIAtlas", LoadingAtlasCompleted, (result) => {
+        ResourcesManager.Instance.LoadAsset<SpriteAtlas>("Atlas/BattleUIAtlas", LoadingAtlasCompleted, (result) => {
             Debug.Log(result);
         });
     }
@@ -55,7 +55,7 @@ public class Loading : MonoBehaviour
         {
             string cardname = item.Key;
             Debug.Log("card name : " + cardname);
-            ResourcesManager.Instance.LoadAsset<GameObject>((int)AtlasTag.CARD, "Prefabs/Archer", LoadingPrefabCompleted, (result) => {
+            ResourcesManager.Instance.LoadAsset<GameObject>("Prefabs/Hero/" + cardname, LoadingPrefabCompleted, (result) => {
                 Debug.Log(result);
             });
         }
@@ -66,45 +66,48 @@ public class Loading : MonoBehaviour
         
     }
 
-    void LoadingConfigCompleted(int congfigTag, TextAsset textAsset)
+    void LoadingConfigCompleted(TextAsset textAsset)
     {
-        switch((ConfigTag)congfigTag)
+        Debug.Log("text asset name : " + textAsset.name);
+            switch(textAsset.name)
         {
-            case ConfigTag.CARD:
+            case "cardconfig":
                 DataManager.Instance.SetCardsByTextAsset(textAsset);
                 loadingCompleted.Invoke(0.05f);
                 break;
-            case ConfigTag.KINGTOWER:
+            case "kingTower":
                 DataManager.Instance.SetKingTowersByTextAsset(textAsset);
                 loadingCompleted.Invoke(0.05f);
                 break;
-            case ConfigTag.ENEMY:
+            case "enemyconfig":
                 DataManager.Instance.SetEnemyCampByTextAsset(textAsset);
                 loadingCompleted.Invoke(0.05f);
                 break;
-            case ConfigTag.WE:
+            case "weconfig":
                 DataManager.Instance.SetWeCampByTextAsset(textAsset);
                 loadingCompleted.Invoke(0.05f);
                 break;
         }
     }
 
-    void LoadingAtlasCompleted(int atlasTag, SpriteAtlas spriteAtlas)
+    void LoadingAtlasCompleted(SpriteAtlas spriteAtlas)
     {
-        switch((AtlasTag)atlasTag)
+        Debug.Log("sprite atlas name" + spriteAtlas.name);
+        switch(spriteAtlas.name)
         {
-            case AtlasTag.CARD:
+            case "CardsAtlas":
                 DataManager.Instance.SetCardSpritesByAtlas(spriteAtlas);
                 loadingCompleted.Invoke(0.1f);
                 break;
-            case AtlasTag.UI:
+            case "BattleUIAtlas":
                 loadingCompleted.Invoke(0.1f);
                 break;
         }
     }
 
-    void LoadingPrefabCompleted(int prefabTag, GameObject prefabObj)
+    void LoadingPrefabCompleted(GameObject prefabObj)
     {
-        
+        Debug.Log("prefab name :" + prefabObj.name);
+        loadingCompleted.Invoke(0.025f);
     }
 }
