@@ -108,6 +108,7 @@ public class Loading : MonoBehaviour
     void LoadingPrefabCompleted(GameObject prefabObj)
     {
         Debug.Log("prefab name :" + prefabObj.name);
+        DataManager.Instance.SetBattleHeros(prefabObj);
         loadingCompleted.Invoke(0.025f);
     }
 }

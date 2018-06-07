@@ -8,20 +8,11 @@ public class UICardButtonControl : MonoBehaviour {
     public Image _NextCardImage;
 
     private int lastSelectedIndex;
-    private List<Sprite> cardPools = new List<Sprite>();
-    string[] cards = { "archers", "arrows", "baby-dragon", "balloon", "bandit", "barbarian-hut", "barbarians", "bomb-tower"};
     int completeCount;
 
 	void Start () 
     {
         InitCardButtonList();
-
-        InitCardPools();
-    }
-
-	void InitCardPools()
-    {
-        
     }
 
     void InitCardButtonList() 
@@ -29,7 +20,9 @@ public class UICardButtonControl : MonoBehaviour {
         for (int i = 0; i < _CardButtons.Count; i++)
         {
             UIDragButton item = _CardButtons[i] as UIDragButton;
-            item.ChangeButtonImage(DataManager.Instance.getARandomCard());
+            Sprite sprite = DataManager.Instance.getARandomCard();
+            item.ChangeButtonImage(sprite);
+            item._HeroPrafab = DataManager.Instance.getBattleHeroPrefabByName(sprite.name);
             item.index = i;
             item.cardSelectedEvent.AddListener(OnNoticeCardButtonSelected);
             item.cardPlacedEvent.AddListener(OnNoticeCardPlaced);
