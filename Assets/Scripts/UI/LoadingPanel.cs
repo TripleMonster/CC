@@ -72,6 +72,7 @@ public class LoadingPanel : MonoBehaviour {
             case LoadingStep.LOADING_AUDIO:
                 {
                     curStep = LoadingStep.LOADING_END;
+                    _loadingSlider.value += 0.2f;
                     loading.LoadingAudio();
                 }
                 break;

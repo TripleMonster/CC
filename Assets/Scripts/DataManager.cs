@@ -12,6 +12,7 @@ public class DataManager : Singleton<DataManager>
     private Enemy enemyCamp;
 
     public Dictionary<string, Sprite> battleAllCardSprites = new Dictionary<string, Sprite>();
+    public Queue<Sprite> spritesQueue = new Queue<Sprite>();
 
     #region private structure function
     private DataManager() { }
@@ -56,7 +57,10 @@ public class DataManager : Singleton<DataManager>
             {
                 var sprite = spriteAtlas.GetSprite(cardName);
                 if (sprite != null)
+                {
                     battleAllCardSprites.Add(cardName, sprite);
+                    spritesQueue.Enqueue(sprite);
+                }
             }
         }
 
@@ -70,6 +74,21 @@ public class DataManager : Singleton<DataManager>
         //    }
         //}
     }
+
+
+    public Sprite getARandomCard()
+    {
+        Sprite sprite = spritesQueue.Dequeue();
+        Debug.Log("从牌池随机一张卡牌 : " + sprite.name);
+        spritesQueue.Enqueue(sprite);
+        return sprite;
+    }
+    #endregion
+
+
+
+
+    #region prefab hero
 
     #endregion
 }

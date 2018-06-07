@@ -29,10 +29,12 @@ public class UICardButtonControl : MonoBehaviour {
         for (int i = 0; i < _CardButtons.Count; i++)
         {
             UIDragButton item = _CardButtons[i] as UIDragButton;
+            item.ChangeButtonImage(DataManager.Instance.getARandomCard());
             item.index = i;
             item.cardSelectedEvent.AddListener(OnNoticeCardButtonSelected);
             item.cardPlacedEvent.AddListener(OnNoticeCardPlaced);
         }
+        PreviewNextCard();
     }
 
     void OnNoticeCardButtonSelected(int index) 
@@ -53,6 +55,7 @@ public class UICardButtonControl : MonoBehaviour {
         UIDragButton item = _CardButtons[index] as UIDragButton;
         if (item != null)
         {
+            Debug.Log("下一张卡牌是 : " + _NextCardImage.sprite.name);
             item.ChangeButtonImage(_NextCardImage.sprite);
             PreviewNextCard();
         }
@@ -60,7 +63,7 @@ public class UICardButtonControl : MonoBehaviour {
 
     void PreviewNextCard()
     {
-        
+        _NextCardImage.sprite = DataManager.Instance.getARandomCard();
     }
 
     void LoadCardsCompleted()

@@ -11,7 +11,7 @@ using UnityEventUtils;
 public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragHandler 
 {
 
-    public GameObject _HeroPrafab;
+    [HideInInspector]public GameObject _HeroPrafab;
 
     [HideInInspector] public UEvent_i cardSelectedEvent = new UEvent_i();
     [HideInInspector] public UEvent_i cardPlacedEvent = new UEvent_i();
@@ -27,9 +27,13 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     private DragingPhase currentDragingPhase;
 
-	private void Start()
+    private void Awake()
     {
-        cardImageRT = GetComponent<Image>().rectTransform;
+        cardImageRT = GetComponent<Image>().rectTransform;   
+    }
+
+    private void Start()
+    {
         currentCardSelectedState = CardSelectedState.NORMAL;
 	}
 
@@ -69,6 +73,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
             {
                 heroControl = dragingHero.GetComponent<HeroControl>();
                 heroControl.Init();
+                cardPlacedEvent.Invoke(index);
             }
             else
             {
@@ -135,8 +140,6 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(pos.x, pos.y, screenPos.z));
         dragingHero.transform.position = new Vector3(worldPos.x, 0, worldPos.z);
-
-        cardPlacedEvent.Invoke(index);
     }
 
     bool CheckIsPlaced (out RaycastHit hit) 
