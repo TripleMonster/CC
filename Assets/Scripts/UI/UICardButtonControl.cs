@@ -49,6 +49,7 @@ public class UICardButtonControl : MonoBehaviour {
         {
             Debug.Log("下一张卡牌是 : " + _NextCardImage.sprite.name);
             item.ChangeButtonImage(_NextCardImage.sprite);
+            item.SetIndexAndCardName(index, _NextCardImage.sprite.name);
             PreviewNextCard();
         }
     }

@@ -173,6 +173,11 @@ GameObject:
   - component: {fileID: 4259297826743986}
   - component: {fileID: 95814736193421006}
   - component: {fileID: 114157414784243568}
+  - component: {fileID: 136811267104642468}
+  - component: {fileID: 195392302516135410}
+  - component: {fileID: 114667487997035152}
+  - component: {fileID: 114272288410919600}
+  - component: {fileID: 114252021194136494}
   m_Layer: 0
   m_Name: musketeer
   m_TagString: Untagged
@@ -854,7 +859,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 17060fef621e2af4f87855fb5985dd56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -876,6 +881,52 @@ MonoBehaviour:
   attackLenght: 1
   attackRange: 25
   hitEffect: {fileID: 0}
+--- !u!114 &114252021194136494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422260665376848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114272288410919600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422260665376848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114667487997035152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422260665376848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136811267104642468
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422260665376848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137901415472780012
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -942,3 +993,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.09346819, y: 0.021879926, z: 0.024168268}
     m_Extent: {x: 0.62389374, y: 0.20677263, z: 0.3702249}
   m_DirtyAABB: 0
+--- !u!195 &195392302516135410
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422260665376848}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

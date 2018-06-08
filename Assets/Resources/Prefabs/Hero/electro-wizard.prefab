@@ -96,6 +96,11 @@ GameObject:
   - component: {fileID: 4518425933835168}
   - component: {fileID: 95773251616804536}
   - component: {fileID: 114429092357075004}
+  - component: {fileID: 136107091108890126}
+  - component: {fileID: 195577769325317310}
+  - component: {fileID: 114708680912312524}
+  - component: {fileID: 114615359008428002}
+  - component: {fileID: 114441705710906542}
   m_Layer: 0
   m_Name: electro-wizard
   m_TagString: Untagged
@@ -854,7 +859,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 88e0e1f796b6e884a8f1dabaf86ae31a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -876,6 +881,52 @@ MonoBehaviour:
   attackLenght: 0.7
   attackRange: 15
   hitEffect: {fileID: 106216, guid: 0944f4b9f4efb0542888c8a41b5983ae, type: 2}
+--- !u!114 &114441705710906542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244271009227290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114615359008428002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244271009227290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114708680912312524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244271009227290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136107091108890126
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244271009227290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137872311890911248
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -943,3 +994,24 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.006662816, y: -0.051434234, z: -0.00000055134296}
     m_Extent: {x: 0.5505365, y: 0.20924999, z: 0.34605604}
   m_DirtyAABB: 0
+--- !u!195 &195577769325317310
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244271009227290}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

@@ -2234,8 +2234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1922372655691728, guid: efd0f81d18350469c806620cb940b38f,
-    type: 2}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,8 +3274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1375648448333494, guid: d6c091de705bb440c86b0d322ed46f5d,
-    type: 2}
 --- !u!43 &746999730
 Mesh:
   m_ObjectHideFlags: 0
@@ -4298,8 +4294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1922372655691728, guid: efd0f81d18350469c806620cb940b38f,
-    type: 2}
 --- !u!114 &1155822823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5564,6 +5558,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674333089973104, guid: ae2dc815a57884cb1862d1e0552282a9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2dc815a57884cb1862d1e0552282a9, type: 2}
@@ -9385,8 +9383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HeroPrafab: {fileID: 1016043330768424, guid: 7eecfe869afe046988de0df027401180,
-    type: 2}
 --- !u!1 &2093693597
 GameObject:
   m_ObjectHideFlags: 0
