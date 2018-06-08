@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,14 +11,12 @@ using UnityEventUtils;
 [RequireComponent(typeof(Image))]
 public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragHandler 
 {
-
-    [HideInInspector]public GameObject _HeroPrafab;
-
     [HideInInspector] public UEvent_i cardSelectedEvent = new UEvent_i();
     [HideInInspector] public UEvent_i cardPlacedEvent = new UEvent_i();
 
     public CardSelectedState currentCardSelectedState{ get; private set; }
-    public int index { get; set; }
+    private int index;
+    private string cardName;
 
     enum DragingPhase { SCALE_CARD, SCALE_HERO, DRAG_HERO }
     private GameObject dragingHero;
@@ -39,8 +38,9 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     void CreateHeroInstance(Vector3 position) 
     {
-        dragingHero = Instantiate<GameObject>(_HeroPrafab);
-
+        Debug.Log("card name------------" + this.cardName);
+        dragingHero = TTPoolsManager.Instance.GetPrefabFromPool(this.cardName).gameObject;
+        Debug.Log("hero name************" + dragingHero.name);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, screenPos.z));
         dragingHero.transform.position = new Vector3(worldPos.x, 0, worldPos.z);
@@ -195,5 +195,13 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
     public override void OnPointerUp(PointerEventData eventData)
     {
         
+    }
+
+    public void SetIndexAndCardName(int index, string cardName)
+    {
+        this.index = index;
+        string pattern1 = @"(\w+[-]?\w+)";
+        this.cardName = new Regex(pattern1).Match(cardName).Value;
+        Debug.Log("hero name : " + this.cardName);
     }
 }

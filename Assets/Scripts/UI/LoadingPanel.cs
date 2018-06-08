@@ -10,7 +10,7 @@ public class LoadingPanel : MonoBehaviour {
 
     enum LoadingStep { LOADING_START, LOADING_CONFIG, LOADING_ATLAS, LOADING_PREFAB, LOADING_AUDIO, LOADING_END }
     LoadingStep curStep;
-    bool isStartLoading = true;
+    public bool isStartLoading { get; set; }
     private Loading loading;
 
     private void Awake()
@@ -80,7 +80,9 @@ public class LoadingPanel : MonoBehaviour {
                 {
                     _loadingSlider.value += 0.1f;
                     isStartLoading = false;
-                    AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
+                    GameManager.Instance.ActiveOrInActiveUiCardButtions(true);
+                    //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
+                    Destroy(gameObject);
                 }
                 break;
         }      

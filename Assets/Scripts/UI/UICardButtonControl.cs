@@ -22,8 +22,7 @@ public class UICardButtonControl : MonoBehaviour {
             UIDragButton item = _CardButtons[i] as UIDragButton;
             Sprite sprite = DataManager.Instance.getARandomCard();
             item.ChangeButtonImage(sprite);
-            item._HeroPrafab = DataManager.Instance.getBattleHeroPrefabByName(sprite.name);
-            item.index = i;
+            item.SetIndexAndCardName(i, sprite.name);
             item.cardSelectedEvent.AddListener(OnNoticeCardButtonSelected);
             item.cardPlacedEvent.AddListener(OnNoticeCardPlaced);
         }
@@ -63,6 +62,4 @@ public class UICardButtonControl : MonoBehaviour {
     {
        
     }
-
-
 }

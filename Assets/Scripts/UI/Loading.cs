@@ -68,7 +68,6 @@ public class Loading : MonoBehaviour
 
     void LoadingConfigCompleted(TextAsset textAsset)
     {
-        Debug.Log("text asset name : " + textAsset.name);
             switch(textAsset.name)
         {
             case "cardconfig":
@@ -92,7 +91,6 @@ public class Loading : MonoBehaviour
 
     void LoadingAtlasCompleted(SpriteAtlas spriteAtlas)
     {
-        Debug.Log("sprite atlas name" + spriteAtlas.name);
         switch(spriteAtlas.name)
         {
             case "CardsAtlas":
@@ -107,8 +105,7 @@ public class Loading : MonoBehaviour
 
     void LoadingPrefabCompleted(GameObject prefabObj)
     {
-        Debug.Log("prefab name :" + prefabObj.name);
-        DataManager.Instance.SetBattleHeros(prefabObj);
+        TTPoolsManager.Instance.AddPrfabToPool(prefabObj);
         loadingCompleted.Invoke(0.025f);
     }
 }

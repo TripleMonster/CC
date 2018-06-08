@@ -14,7 +14,6 @@ public class DataManager : Singleton<DataManager>
 
     public Dictionary<string, Sprite> battleAllCardSprites = new Dictionary<string, Sprite>();
     public Queue<Sprite> spritesQueue = new Queue<Sprite>();
-    public Dictionary<string, GameObject> battleHeros = new Dictionary<string, GameObject>();
 
     #region private structure function
     private DataManager() { }
@@ -84,24 +83,6 @@ public class DataManager : Singleton<DataManager>
         Debug.Log("从牌池随机一张卡牌 : " + sprite.name);
         spritesQueue.Enqueue(sprite);
         return sprite;
-    }
-    #endregion
-
-
-
-
-    #region prefab hero
-    public void SetBattleHeros(GameObject gameObject)
-    {
-        battleHeros.Add(gameObject.name, gameObject);
-    }
-
-    public GameObject getBattleHeroPrefabByName(string objName)
-    {
-        string pattern1 = @"(\w+)";
-        string heroName = new Regex(pattern1).Match(objName).Value;
-        Debug.Log("hero name : " + heroName);
-        return battleHeros[heroName];
     }
     #endregion
 }
