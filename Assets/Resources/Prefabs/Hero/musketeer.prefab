@@ -369,8 +369,13 @@ GameObject:
   - component: {fileID: 4146691156390380}
   - component: {fileID: 95606447222777060}
   - component: {fileID: 114876201543938182}
+  - component: {fileID: 136190760335789066}
+  - component: {fileID: 114406187971640442}
+  - component: {fileID: 114738874714786416}
+  - component: {fileID: 114931746622406554}
+  - component: {fileID: 195145390992615862}
   m_Layer: 0
-  m_Name: Undead_Archer
+  m_Name: musketeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,6 +921,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114406187971640442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859271157613878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d7df46071644c08974aacc000e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114738874714786416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859271157613878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0a2f73f717c49e699112ea9b5046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114876201543938182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -932,6 +959,30 @@ MonoBehaviour:
   attackLenght: 1
   attackRange: 25
   hitEffect: {fileID: 0}
+--- !u!114 &114931746622406554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859271157613878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774432326bc40471ebd95b7cf604b00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136190760335789066
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859271157613878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137850631668100428
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -997,3 +1048,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.26589537, y: -0.00016462803, z: -0.15859473}
     m_Extent: {x: 1.4381065, y: 0.8220401, z: 0.98214567}
   m_DirtyAABB: 0
+--- !u!195 &195145390992615862
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859271157613878}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 114272288410919600}
   - component: {fileID: 114252021194136494}
   m_Layer: 0
-  m_Name: musketeer
+  m_Name: executioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

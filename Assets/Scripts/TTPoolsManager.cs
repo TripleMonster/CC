@@ -5,11 +5,12 @@ using PathologicalGames;
 
 public class TTPoolsManager : MonoSigleton<TTPoolsManager> {
     SpawnPool heroPool;
-
+    SpawnPool bloodBarPool;
 
 	void Start () 
     {
         heroPool = PoolManager.Pools["Hero"];
+        bloodBarPool = PoolManager.Pools["BloodBar"];
 	}
 	
 	void Update () 
@@ -34,5 +35,10 @@ public class TTPoolsManager : MonoSigleton<TTPoolsManager> {
     public Transform GetPrefabFromPool(string prefabName)
     {
         return heroPool.Spawn(prefabName);
+    }
+    
+    public Transform GetBloodBarPrefabFromPool(string prefabName)
+    {
+        return bloodBarPool.Spawn(prefabName);
     }
 }

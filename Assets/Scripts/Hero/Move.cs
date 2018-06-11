@@ -49,7 +49,7 @@ public class Move : MonoBehaviour
     void StartAutoMoveAlongWaypoint()
     {
         if (currentPointIndex >= _WayPoints.Count)
-            //currentPointIndex = 0;
+            currentPointIndex = 0;
 
         targetPos = _WayPoints[currentPointIndex].position;
         heroAgent.destination = targetPos;
