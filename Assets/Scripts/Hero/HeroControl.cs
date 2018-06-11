@@ -19,6 +19,7 @@ public class HeroControl : MonoBehaviour
 
     public void Init()
     {
+        Debug.Log("hero control position : " + transform.position);
         gameObject.layer = 0;
         StartCoroutine(DeployHero());
     }

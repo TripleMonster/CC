@@ -80,6 +80,21 @@
     "cost": 3,
     "blood": 500,
     "attack": 100
+  },
+  "skeletons": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "witch": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
+  },
+  "guards": {
+    "cost": 3,
+    "blood": 500,
+    "attack": 100
   }
 }
 }
