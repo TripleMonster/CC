@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Loading))]
 public class LoadingPanel : MonoBehaviour {
     [SerializeField] private Slider _loadingSlider;
+    [SerializeField] private Text _percentLabel;
 
     enum LoadingStep { LOADING_START, LOADING_CONFIG, LOADING_ATLAS, LOADING_PREFAB, LOADING_AUDIO, LOADING_END }
     LoadingStep curStep;
@@ -18,6 +19,7 @@ public class LoadingPanel : MonoBehaviour {
         loading = GetComponent<Loading>();
         if (loading)
             loading.loadingCompleted.AddListener(LoadingCompleted);
+        _loadingSlider.onValueChanged.AddListener(OnSliderChanged);
     }
 
     void Start () 
@@ -37,7 +39,7 @@ public class LoadingPanel : MonoBehaviour {
     IEnumerator Loading()
     {
         LoadingByStep(curStep);
-        yield return new WaitForSeconds(2.0f);
+        yield return null;
         isStartLoading = true;
     }
 
@@ -92,5 +94,11 @@ public class LoadingPanel : MonoBehaviour {
     {
         Debug.Log("加载完成了:" + progress.ToString());
         _loadingSlider.value += progress;
+    }
+
+    void OnSliderChanged(float result)
+    {
+        float percent = _loadingSlider.value * 100;
+        _percentLabel.text = string.Format("{0}%", percent);
     }
 }
