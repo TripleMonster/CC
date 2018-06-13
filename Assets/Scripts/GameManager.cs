@@ -23,19 +23,26 @@ public class GameManager : MonoSigleton<GameManager> {
     {
         _LoadingPanel.isStartLoading = true;
 	}
-	float addTime = 0;
+
 	void Update () 
     {
-		if (addTime < 3)
+		
+	}
+
+    int slideSpeed = 0;
+    private void FixedUpdate() 
+    {
+        if (slideSpeed == 20)
         {
-            addTime += Time.deltaTime;
+            _mySlider.value += 0.01f;
+            slideSpeed = 0;
         }
         else
         {
-            _mySlider.value += 0.1f;
-            addTime = 0;
+            float deltaTime = Time.deltaTime * 100;
+            slideSpeed += (int)deltaTime;
         }
-	}
+    }
 
     public void ActiveOrInActiveUiCardButtions(bool isActive)
     {

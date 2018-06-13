@@ -17,24 +17,13 @@ namespace UnityEngine.UI
             TopToBottom,
         }
 
-        [Serializable]
-        public class MySliderEvent : UnityEvent<float> {}
+        [Serializable] public class MySliderEvent : UnityEvent<float> {}
 
-        [SerializeField]
-        private RectTransform m_FillRect;
-        public RectTransform fillRect 
-        { 
-            get { return m_FillRect; } 
-            set { if (TTSetPropertyUtility.SetClass(ref m_FillRect, value)) { UpdateCachedRefences(); UpdateVisuals(); } }
-        }
+        [SerializeField] private RectTransform m_FillRect;
 
-        [SerializeField]
-        private Direction m_Direction = Direction.LeftToRight;
-        public Direction direction 
-        { 
-            get { return m_Direction; } 
-            set { if (TTSetPropertyUtility.SetStruct(ref m_Direction, value)) { UpdateVisuals(); } }
-        }
+        [SerializeField] private RectTransform m_FillRect2;
+
+        [SerializeField] private Direction m_Direction = Direction.LeftToRight;
 
         [SerializeField]
         private float m_MinValue = 0;
@@ -60,13 +49,21 @@ namespace UnityEngine.UI
             set { Set(value);}
         }
 
+        [SerializeField]
+        protected float m_Value2;
+        public virtual float value2
+        {
+            get { return m_Value2; }
+            set { Set(value);}
+        }
+
         public float normalizedValue
         {
             get 
             {
                 if (Mathf.Approximately(minValue, maxValue))
                     return 0;
-                return Mathf.InverseLerp(minValue, maxValue, value);
+                return Mathf.InverseLerp(minValue, maxValue, this.value);
             }
             set { this.value = Mathf.Lerp(minValue, maxValue, value); }
         }
@@ -81,6 +78,9 @@ namespace UnityEngine.UI
         private Image m_FillImage;
         private Transform m_FillTransform;
         private RectTransform m_FillContainerRect;
+        private Image m_FillImage2;
+        private Transform m_FillTransform2;
+        private RectTransform m_FillContainerRect2;
         private DrivenRectTransformTracker m_Tracker;
         float stepSize { get { return (maxValue - minValue) * 0.1f; } }
         protected MySlider() {}
@@ -101,8 +101,6 @@ namespace UnityEngine.UI
 
         protected override void OnDidApplyAnimationProperties()
         {
-            // Has value changed? Various elements of the slider have the old normalisedValue assigned, we can use this to perform a comparison.
-            // We also need to ensure the value stays within min/max.
             m_Value = ClampValue(m_Value);
             float oldNormalizedValue = normalizedValue;
             if (m_FillContainerRect != null)
@@ -128,6 +126,7 @@ namespace UnityEngine.UI
             {
                 m_FillTransform = m_FillRect.transform;
                 m_FillImage = m_FillRect.GetComponent<Image>();
+                m_FillImage.gameObject.SetActive(true);
                 if (m_FillTransform.parent != null)
                     m_FillContainerRect = m_FillTransform.parent.GetComponent<RectTransform>();
             }
@@ -137,6 +136,22 @@ namespace UnityEngine.UI
                 m_FillContainerRect = null;
                 m_FillImage = null;
             }
+
+            if (m_FillRect2 && m_FillRect2 != (RectTransform)transform)
+            {
+                m_FillTransform2 = m_FillRect2.transform;
+                m_FillImage2 = m_FillRect2.GetComponent<Image>();
+                m_FillImage2.gameObject.SetActive(true);
+                if (m_FillTransform2.parent != null)
+                    m_FillContainerRect2 = m_FillTransform2.parent.GetComponent<RectTransform>();
+            }
+            else
+            {
+                m_FillRect2 = null;
+                m_FillContainerRect2 = null;
+                m_FillImage2 = null;
+            }
+
         }
 
         void Set(float input)
@@ -153,7 +168,7 @@ namespace UnityEngine.UI
         protected virtual void Set(float input, bool sendCallback)
         {
             float newValue = ClampValue(input);
-
+            
             if (m_Value == newValue)
                 return;
             
