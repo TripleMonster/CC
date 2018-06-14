@@ -18,12 +18,9 @@ namespace UnityEngine.UI
         }
 
         [Serializable] public class MySliderEvent : UnityEvent<float> {}
-
         [SerializeField] private RectTransform m_FillRect;
-
-        [SerializeField] private RectTransform m_FillRect2;
-
         [SerializeField] private Direction m_Direction = Direction.LeftToRight;
+        [SerializeField] private MySlider m_Slider;
 
         [SerializeField]
         private float m_MinValue = 0;
@@ -49,14 +46,6 @@ namespace UnityEngine.UI
             set { Set(value);}
         }
 
-        [SerializeField]
-        protected float m_Value2;
-        public virtual float value2
-        {
-            get { return m_Value2; }
-            set { Set(value);}
-        }
-
         public float normalizedValue
         {
             get 
@@ -72,15 +61,15 @@ namespace UnityEngine.UI
         public MySliderEvent onValueChanged
         {
             get { return m_OnValueChanged; }
-            set { m_OnValueChanged = value; }
+            set 
+            { 
+                m_OnValueChanged = value;
+            }
         }
 
         private Image m_FillImage;
         private Transform m_FillTransform;
         private RectTransform m_FillContainerRect;
-        private Image m_FillImage2;
-        private Transform m_FillTransform2;
-        private RectTransform m_FillContainerRect2;
         private DrivenRectTransformTracker m_Tracker;
         float stepSize { get { return (maxValue - minValue) * 0.1f; } }
         protected MySlider() {}
@@ -136,22 +125,6 @@ namespace UnityEngine.UI
                 m_FillContainerRect = null;
                 m_FillImage = null;
             }
-
-            if (m_FillRect2 && m_FillRect2 != (RectTransform)transform)
-            {
-                m_FillTransform2 = m_FillRect2.transform;
-                m_FillImage2 = m_FillRect2.GetComponent<Image>();
-                m_FillImage2.gameObject.SetActive(true);
-                if (m_FillTransform2.parent != null)
-                    m_FillContainerRect2 = m_FillTransform2.parent.GetComponent<RectTransform>();
-            }
-            else
-            {
-                m_FillRect2 = null;
-                m_FillContainerRect2 = null;
-                m_FillImage2 = null;
-            }
-
         }
 
         void Set(float input)
@@ -178,6 +151,7 @@ namespace UnityEngine.UI
             {
                 UISystemProfilerApi.AddMarker("MySlider.value", this);
                 m_OnValueChanged.Invoke(newValue);
+                InVokeSlider();
             }
         }
 
@@ -219,6 +193,21 @@ namespace UnityEngine.UI
 
                 m_FillRect.anchorMin = anchorMin;
                 m_FillRect.anchorMax = anchorMax;
+            }
+        }
+
+        int currentSliderPart = 0;
+        void InVokeSlider() 
+        {
+            int iValue = Mathf.CeilToInt(m_Value * 100);
+            int part = iValue / 10;
+            if (part < currentSliderPart)
+            {
+                currentSliderPart = part;
+                if (m_Slider)
+                {
+                    m_Slider.value += 0.1f;
+                }  
             }
         }
 
