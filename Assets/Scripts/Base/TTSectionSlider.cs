@@ -22,23 +22,20 @@ namespace UnityEngine.UI
         [SerializeField] private Direction m_Direction = Direction.LeftToRight;
         [SerializeField] private TTSectionSlider m_TopSlider;
 
-        [SerializeField]
         private float m_MinValue = 0;
-        public float minValue 
+        float minValue 
         { 
             get { return m_MinValue; } 
             set { if (TTSetPropertyUtility.SetStruct(ref m_MinValue, value)) { Set(m_Value); UpdateVisuals(); } } 
         }
 
-        [SerializeField]
         private float m_MaxValue = 1;
-        public float maxValue 
+        float maxValue 
         {
             get { return m_MaxValue; } 
             set { if (TTSetPropertyUtility.SetStruct(ref m_MaxValue, value)) { Set(m_Value); UpdateVisuals(); } } 
         }
 
-        [SerializeField]
         protected float m_Value;
         public virtual float value
         {
