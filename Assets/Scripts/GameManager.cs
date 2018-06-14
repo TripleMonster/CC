@@ -9,7 +9,7 @@ public class GameManager : MonoSigleton<GameManager> {
     public List<Transform> _Waypoints;
     public GameObject _UiCardButtions;
     public LoadingPanel _LoadingPanel;
-    public MySlider _mySlider;
+    public TTSectionSlider _mySlider;
 
     [HideInInspector]public TTMainThreadDispatcher mainThreadDispatcher;
 

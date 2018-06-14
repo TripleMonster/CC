@@ -7,7 +7,7 @@ namespace UnityEngine.UI
 {
     [AddComponentMenu("UI/My Slider")]
     [RequireComponent(typeof(RectTransform))]
-    public class MySlider : UIBehaviour,ICanvasElement
+    public class TTSectionSlider : UIBehaviour,ICanvasElement
     {
         public enum Direction
         {
@@ -20,7 +20,7 @@ namespace UnityEngine.UI
         [Serializable] public class MySliderEvent : UnityEvent<float> {}
         [SerializeField] private RectTransform m_FillRect;
         [SerializeField] private Direction m_Direction = Direction.LeftToRight;
-        [SerializeField] private MySlider m_Slider;
+        [SerializeField] private TTSectionSlider m_TopSlider;
 
         [SerializeField]
         private float m_MinValue = 0;
@@ -44,6 +44,16 @@ namespace UnityEngine.UI
         {
             get { return m_Value; }
             set { Set(value);}
+        }
+
+        public float realValue
+        {
+            get 
+            {
+                if (m_TopSlider)
+                    return m_TopSlider.value;
+                return 0;
+            }
         }
 
         public float normalizedValue
@@ -72,7 +82,7 @@ namespace UnityEngine.UI
         private RectTransform m_FillContainerRect;
         private DrivenRectTransformTracker m_Tracker;
         float stepSize { get { return (maxValue - minValue) * 0.1f; } }
-        protected MySlider() {}
+        protected TTSectionSlider() {}
 
         protected override void OnEnable()
         {
@@ -144,14 +154,16 @@ namespace UnityEngine.UI
             
             if (m_Value == newValue)
                 return;
-            
+
+            bool isAdd = m_Value < newValue ? true : false;
+    
             m_Value = newValue;
             UpdateVisuals();
             if (sendCallback)
             {
                 UISystemProfilerApi.AddMarker("MySlider.value", this);
                 m_OnValueChanged.Invoke(newValue);
-                InVokeSlider();
+                InVokeSlider(isAdd);
             }
         }
 
@@ -197,18 +209,27 @@ namespace UnityEngine.UI
         }
 
         int currentSliderPart = 0;
-        void InVokeSlider() 
+        void InVokeSlider(bool isAdd) 
         {
             int iValue = Mathf.CeilToInt(m_Value * 100);
             int part = iValue / 10;
-            if (part < currentSliderPart)
+
+            if (isAdd)
+            {
+                if (part > currentSliderPart)
+                {
+                    currentSliderPart = part;
+                    if (m_TopSlider)
+                        m_TopSlider.value += 0.1f;
+                }
+            }
+            else
             {
                 currentSliderPart = part;
-                if (m_Slider)
-                {
-                    m_Slider.value += 0.1f;
-                }  
+                if (m_TopSlider)
+                    m_TopSlider.value = part / 10.0f;
             }
+            
         }
 
         public virtual void Rebuild(CanvasUpdate executing)
