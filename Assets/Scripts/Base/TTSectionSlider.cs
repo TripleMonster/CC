@@ -17,7 +17,7 @@ namespace UnityEngine.UI
             TopToBottom,
         }
 
-        [Serializable] public class MySliderEvent : UnityEvent<float> {}
+        [Serializable] public class TTSliderEvent : UnityEvent<float> {}
         [SerializeField] private RectTransform m_FillRect;
         [SerializeField] private Direction m_Direction = Direction.LeftToRight;
         [SerializeField] private TTSectionSlider m_TopSlider;
@@ -64,13 +64,23 @@ namespace UnityEngine.UI
             set { this.value = Mathf.Lerp(minValue, maxValue, value); }
         }
 
-        private MySliderEvent m_OnValueChanged = new MySliderEvent();
-        public MySliderEvent onValueChanged
+        private TTSliderEvent m_OnValueChanged = new TTSliderEvent();
+        public TTSliderEvent onValueChanged
         {
             get { return m_OnValueChanged; }
             set 
             { 
                 m_OnValueChanged = value;
+            }
+        }
+
+        private TTSliderEvent m_OnRealValueChanged = new TTSliderEvent();
+        public TTSliderEvent onRealValueChanged
+        {
+            get { return m_OnRealValueChanged; }
+            set
+            {
+                m_OnRealValueChanged = value;
             }
         }
 
@@ -217,16 +227,21 @@ namespace UnityEngine.UI
                 {
                     currentSliderPart = part;
                     if (m_TopSlider)
+                    {
                         m_TopSlider.value += 0.1f;
+                        onRealValueChanged.Invoke(realValue);
+                    }
                 }
             }
             else
             {
                 currentSliderPart = part;
                 if (m_TopSlider)
+                {
                     m_TopSlider.value = part / 10.0f;
+                    m_OnRealValueChanged.Invoke(realValue);
+                }
             }
-            
         }
 
         public virtual void Rebuild(CanvasUpdate executing)

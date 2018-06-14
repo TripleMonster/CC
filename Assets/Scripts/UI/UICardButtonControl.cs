@@ -4,15 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UICardButtonControl : MonoBehaviour {
-    public List<UIDragButton> _CardButtons;
-    public Image _NextCardImage;
+    [SerializeField] private List<UIDragButton> _CardButtons;
+    [SerializeField] private Image _NextCardImage;
+    [SerializeField] private TTSectionSlider _dripSlider;
+    [SerializeField] private Text _dripNumberText;
 
     private int lastSelectedIndex;
     int completeCount;
+    int currentDripCount;
 
 	void Start () 
     {
+        InitDrip();
         InitCardButtonList();
+    }
+
+    void InitDrip()
+    {
+        _dripSlider.onRealValueChanged.AddListener(OnDripSliderChanged);
     }
 
     void InitCardButtonList() 
@@ -62,5 +71,12 @@ public class UICardButtonControl : MonoBehaviour {
     void LoadCardsCompleted()
     {
        
+    }
+
+    void OnDripSliderChanged(float value)
+    {
+        float nValue = _dripSlider.realValue * 10;
+        _dripNumberText.text = Mathf.FloorToInt(nValue).ToString();
+        currentDripCount = Mathf.FloorToInt(nValue);
     }
 }

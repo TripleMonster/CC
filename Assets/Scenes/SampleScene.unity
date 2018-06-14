@@ -2385,7 +2385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 0
 --- !u!222 &274816897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2838,7 +2838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &516854064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3744,7 +3744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &861782904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3771,7 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.01886791, g: 0.018422913, b: 0.018422913, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3804,22 +3804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775249a807c1d40ae8cd4c1c6dbc2384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FillRect: {fileID: 0}
-  m_Direction: 0
-  m_Slider: {fileID: 0}
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_Value: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MySlider+MySliderEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
-  m_FillImage: {fileID: 0}
-  m_FillTransform: {fileID: 0}
-  m_FillContainerRect: {fileID: 0}
-  currentSliderPart: 0
 --- !u!1 &909569004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4477,8 @@ MonoBehaviour:
   - {fileID: 2019400786}
   - {fileID: 72899769}
   _NextCardImage: {fileID: 1448332950}
+  _dripSlider: {fileID: 1496004356}
+  _dripNumberText: {fileID: 274816896}
 --- !u!222 &1116634273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5400,9 +5386,6 @@ MonoBehaviour:
   m_FillRect: {fileID: 909569005}
   m_Direction: 0
   m_TopSlider: {fileID: 0}
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_Value: 0
 --- !u!1 &1434089372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5887,7 +5870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1496004355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5924,9 +5907,6 @@ MonoBehaviour:
   m_FillRect: {fileID: 1320197847}
   m_Direction: 0
   m_TopSlider: {fileID: 1419047788}
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_Value: 0
 --- !u!1 &1500743983
 GameObject:
   m_ObjectHideFlags: 0
