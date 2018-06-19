@@ -16,7 +16,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     public CardSelectedState currentCardSelectedState{ get; private set; }
     private int index;
-    private string cardName;
+    public string cardName;
 
     enum DragingPhase { SCALE_CARD, SCALE_HERO, DRAG_HERO }
     private GameObject dragingHero;
@@ -38,9 +38,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     void CreateHeroInstance(Vector3 position) 
     {
-        Debug.Log("card name------------" + this.cardName);
         dragingHero = TTPoolsManager.Instance.GetPrefabFromPool(this.cardName).gameObject;
-        Debug.Log("hero name************" + dragingHero.name);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, screenPos.z));
         dragingHero.transform.position = new Vector3(worldPos.x, 0, worldPos.z);
@@ -203,5 +201,17 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
         string pattern1 = @"(\w+[-]?\w+)";
         this.cardName = new Regex(pattern1).Match(cardName).Value;
         Debug.Log("hero name : " + this.cardName);
+    }
+
+    public void SwitchAvailableStatus(bool isAvailable)
+    {
+        Image image = GetComponent<Image>();
+        image.raycastTarget = isAvailable;
+        Material nMaterial = null;
+        if (!isAvailable)
+        {
+            nMaterial = Resources.Load<Material>("Materials/UIGray");
+        }
+        image.material = nMaterial;
     }
 }

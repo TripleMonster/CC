@@ -7,7 +7,8 @@ public class GameManager : MonoSigleton<GameManager> {
 
     public PlaneMnager _PlaneMnager;
     public List<Transform> _Waypoints;
-    public GameObject _UiCardButtions;
+    public GameObject _UICardButtions;
+    public GameObject _UIHolyWater;
     public LoadingPanel _LoadingPanel;
     public TTSectionSlider _mySlider;
 
@@ -46,7 +47,8 @@ public class GameManager : MonoSigleton<GameManager> {
 
     public void ActiveOrInActiveUiCardButtions(bool isActive)
     {
-        _UiCardButtions.SetActive(isActive);
+        _UICardButtions.SetActive(isActive);
+        _UIHolyWater.SetActive(isActive);
     }
 
     public List<Transform> GetWaypoints()

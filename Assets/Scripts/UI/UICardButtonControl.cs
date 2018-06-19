@@ -10,7 +10,6 @@ public class UICardButtonControl : MonoBehaviour {
     [SerializeField] private Text _dripNumberText;
 
     private int lastSelectedIndex;
-    int completeCount;
     int currentDripCount;
 
 	void Start () 
@@ -34,6 +33,7 @@ public class UICardButtonControl : MonoBehaviour {
             item.SetIndexAndCardName(i, sprite.name);
             item.cardSelectedEvent.AddListener(OnNoticeCardButtonSelected);
             item.cardPlacedEvent.AddListener(OnNoticeCardPlaced);
+            item.SwitchAvailableStatus(false);
         }
         PreviewNextCard();
     }
@@ -59,6 +59,9 @@ public class UICardButtonControl : MonoBehaviour {
             Debug.Log("下一张卡牌是 : " + _NextCardImage.sprite.name);
             item.ChangeButtonImage(_NextCardImage.sprite);
             item.SetIndexAndCardName(index, _NextCardImage.sprite.name);
+            int cost = DataManager.Instance.GetCardCostByCardName(item.cardName);
+            Debug.Log("name : " + item.cardName + "; cost : " + cost);
+            _dripSlider.value -= cost / 10;
             PreviewNextCard();
         }
     }
@@ -78,5 +81,18 @@ public class UICardButtonControl : MonoBehaviour {
         float nValue = _dripSlider.realValue * 10;
         _dripNumberText.text = Mathf.FloorToInt(nValue).ToString();
         currentDripCount = Mathf.FloorToInt(nValue);
+        CheckCardButtonsStatesByDripCount();
+    }
+
+    void CheckCardButtonsStatesByDripCount()
+    {
+        foreach (var item in _CardButtons)
+        {
+            int cost = DataManager.Instance.GetCardCostByCardName(item.cardName);
+            if (currentDripCount < cost)
+                item.SwitchAvailableStatus(false);
+            else
+                item.SwitchAvailableStatus(true);
+        }
     }
 }

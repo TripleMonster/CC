@@ -1960,7 +1960,8 @@ MonoBehaviour:
   - {fileID: 674915227}
   - {fileID: 1854126768}
   - {fileID: 1434089373}
-  _UiCardButtions: {fileID: 1116634270}
+  _UICardButtions: {fileID: 1116634270}
+  _UIHolyWater: {fileID: 374592407}
   _LoadingPanel: {fileID: 1507095495}
   _mySlider: {fileID: 1496004356}
   mainThreadDispatcher: {fileID: 0}
@@ -2080,6 +2081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: 
 --- !u!43 &191320990
 Mesh:
   m_ObjectHideFlags: 0
@@ -2822,6 +2824,41 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1 &374592407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374592408}
+  m_Layer: 5
+  m_Name: HolyWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &374592408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374592407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1496004355}
+  - {fileID: 516854064}
+  m_Father: {fileID: 1469929045}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &516854063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,20 +2875,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &516854064
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516854063}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 274816895}
-  m_Father: {fileID: 1469929045}
-  m_RootOrder: 4
+  m_Father: {fileID: 374592408}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3541,6 +3578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: 
 --- !u!1 &759874080
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,6 +4954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: 
 --- !u!114 &1155822823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5662,8 +5701,7 @@ RectTransform:
   - {fileID: 1688995284}
   - {fileID: 1507095494}
   - {fileID: 1116634271}
-  - {fileID: 1496004355}
-  - {fileID: 516854064}
+  - {fileID: 374592408}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5870,7 +5908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1496004355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5885,8 +5923,8 @@ RectTransform:
   - {fileID: 1144428703}
   - {fileID: 1419047787}
   - {fileID: 306279603}
-  m_Father: {fileID: 1469929045}
-  m_RootOrder: 3
+  m_Father: {fileID: 374592408}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10673,6 +10711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214c5aad81c8746b98029241c976e6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: 
 --- !u!43 &2142579105
 Mesh:
   m_ObjectHideFlags: 0

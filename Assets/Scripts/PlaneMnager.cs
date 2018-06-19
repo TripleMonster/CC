@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class PlaneMnager : MonoBehaviour {
 
@@ -150,5 +151,10 @@ public class PlaneMnager : MonoBehaviour {
                 Destroy(cube);
         }
         ShowTipMessageToScreen("已清除所有Cube!!!");
+    }
+
+    public void GoToNextScene()
+    {   
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
     }
 }

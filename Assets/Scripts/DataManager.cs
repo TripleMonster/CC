@@ -44,6 +44,14 @@ public class DataManager : Singleton<DataManager>
         We we = JsonConvert.DeserializeObject<We>(textAsset.text);
         this.weCamp = we;
     }
+
+    public int GetCardCostByCardName(string cardName)
+    {
+        Card card = cards.cards[cardName];
+        if (card != null)
+            return card.cost;
+        return 0;
+    }
     #endregion
 
 

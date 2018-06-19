@@ -2,12 +2,12 @@
   "cards":
   {
   "archers": {
-    "cost": 3,
+    "cost": 1,
     "blood": 500,
     "attack": 100
   },
   "bandit": {
-    "cost": 3,
+    "cost": 2,
     "blood": 500,
     "attack": 100
   },
@@ -17,42 +17,42 @@
     "attack": 100
   },
   "bats": {
-    "cost": 3,
+    "cost": 4,
     "blood": 500,
     "attack": 100
   },
   "bowler": {
-    "cost": 3,
+    "cost": 5,
     "blood": 500,
     "attack": 100
   },
   "arrows": {
-    "cost": 3,
+    "cost": 6,
     "blood": 500,
     "attack": 100
   },
   "inferno-tower": {
-    "cost": 3,
+    "cost": 7,
     "blood": 500,
     "attack": 100
   },
   "baby-dragon": {
-    "cost": 3,
+    "cost": 8,
     "blood": 500,
     "attack": 100
   },
   "balloon": {
-    "cost": 3,
+    "cost": 9,
     "blood": 500,
     "attack": 100
   },
   "barbarian-hut": {
-    "cost": 3,
+    "cost": 1,
     "blood": 500,
     "attack": 100
   },
   "dark-prince": {
-    "cost": 3,
+    "cost": 2,
     "blood": 500,
     "attack": 100
   },
@@ -62,37 +62,37 @@
     "attack": 100
   },
   "electro-wizard": {
-    "cost": 3,
+    "cost": 4,
     "blood": 500,
     "attack": 100
   },
   "giant-skeleton": {
-    "cost": 3,
+    "cost": 5,
     "blood": 500,
     "attack": 100
   },
   "musketeer": {
-    "cost": 3,
+    "cost": 6,
     "blood": 500,
     "attack": 100
   },
   "wizard": {
-    "cost": 3,
+    "cost": 7,
     "blood": 500,
     "attack": 100
   },
   "skeletons": {
-    "cost": 3,
+    "cost": 8,
     "blood": 500,
     "attack": 100
   },
   "witch": {
-    "cost": 3,
+    "cost": 9,
     "blood": 500,
     "attack": 100
   },
   "guards": {
-    "cost": 3,
+    "cost": 1,
     "blood": 500,
     "attack": 100
   }
