@@ -56,7 +56,7 @@ public class UICardButtonControl : MonoBehaviour {
         UIDragButton item = _CardButtons[index] as UIDragButton;
         if (item != null)
         {
-            UseupHolyWaterByCardName(item.cardName);
+            ExpendHolyWaterByCardName(item.cardName);
             Debug.Log("下一张卡牌是 : " + _NextCardImage.sprite.name);
             item.ChangeButtonImage(_NextCardImage.sprite);
             item.SetIndexAndCardName(index, _NextCardImage.sprite.name);
@@ -94,7 +94,7 @@ public class UICardButtonControl : MonoBehaviour {
         }
     }
 
-    void UseupHolyWaterByCardName(string cardName)
+    void ExpendHolyWaterByCardName(string cardName)
     {
         int cost = DataManager.Instance.GetCardCostByCardName(cardName);
         float realCost = cost * 0.1f;
