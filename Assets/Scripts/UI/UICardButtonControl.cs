@@ -56,12 +56,10 @@ public class UICardButtonControl : MonoBehaviour {
         UIDragButton item = _CardButtons[index] as UIDragButton;
         if (item != null)
         {
+            UseupHolyWaterByCardName(item.cardName);
             Debug.Log("下一张卡牌是 : " + _NextCardImage.sprite.name);
             item.ChangeButtonImage(_NextCardImage.sprite);
             item.SetIndexAndCardName(index, _NextCardImage.sprite.name);
-            int cost = DataManager.Instance.GetCardCostByCardName(item.cardName);
-            Debug.Log("name : " + item.cardName + "; cost : " + cost);
-            _dripSlider.value -= cost / 10;
             PreviewNextCard();
         }
     }
@@ -94,5 +92,13 @@ public class UICardButtonControl : MonoBehaviour {
             else
                 item.SwitchAvailableStatus(true);
         }
+    }
+
+    void UseupHolyWaterByCardName(string cardName)
+    {
+        int cost = DataManager.Instance.GetCardCostByCardName(cardName);
+        float realCost = cost * 0.1f;
+        Debug.Log("name : " + cardName + "; realcost : " + realCost);
+        _dripSlider.value -= realCost;
     }
 }
