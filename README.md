@@ -1,2 +1,10 @@
-# CC
-The code name is CC.
+# 代号CC
+
+这是一个Copy《皇室战争》的游戏， 用Unity引擎做的，完全自己设计的框架。
+
+目前完成程度：
+
+1. 基于Resources的异步加载资源逻辑（比如配置文件，Prefab, texture等）
+2. 加入了基于PoolManager插件的缓存池
+3. 消耗圣水 -> 拖放卡牌，根据卡牌在场景中防止英雄
+4. 英雄自动寻路
