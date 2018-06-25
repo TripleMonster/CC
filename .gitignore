@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/ProCore/ProBuilder/Icons/Toolbar/
 
 # Visual Studio cache directory
 /.vs/

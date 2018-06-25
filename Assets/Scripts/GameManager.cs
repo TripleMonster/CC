@@ -31,7 +31,7 @@ public class GameManager : MonoSigleton<GameManager> {
 	}
 
     int slideSpeed = 0;
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         if (slideSpeed == 20)
         {
