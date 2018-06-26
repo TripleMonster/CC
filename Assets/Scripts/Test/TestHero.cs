@@ -11,18 +11,16 @@ public class TestHero : MonoBehaviour
 	void Start () 
 	{
 		m_CountDownTimer = GetComponent<TTCountDownTimer>();
-		m_CountDownTimer.SetCountDownTime(100);
-		m_CountDownTimer.intRealTimeEvent.AddListener(UpdateCountDownText);
-
+		m_CountDownTimer.InitCoutDownTimer(TTCountDownType.FLOAT_TIME, 180, UpdateCountDownText);
 	}
 	
 	void Update () 
 	{
 	}
 
-	void UpdateCountDownText(int value)
+	void UpdateCountDownText(string value)
 	{
-		_countDownText.text = "倒计时 : " + value.ToString();
+		_countDownText.text = "倒计时 : " + value;
 	}
 
 	public void BeginCountDown()
