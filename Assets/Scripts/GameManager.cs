@@ -11,6 +11,7 @@ public class GameManager : MonoSigleton<GameManager> {
     public GameObject _UIHolyWater;
     public LoadingPanel _LoadingPanel;
     public TTSectionSlider _mySlider;
+    public TTCountDownTimer _countDownTimer;
 
     [HideInInspector]public TTMainThreadDispatcher mainThreadDispatcher;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoSigleton<GameManager> {
     void Start () 
     {
         _LoadingPanel.isStartLoading = true;
+        _countDownTimer.InitCoutDownTimer(180);
 	}
 
 	void Update () 
@@ -49,6 +51,8 @@ public class GameManager : MonoSigleton<GameManager> {
     {
         _UICardButtions.SetActive(isActive);
         _UIHolyWater.SetActive(isActive);
+        _countDownTimer.gameObject.SetActive(isActive);
+        _countDownTimer.isBeginTimer = true;
     }
 
     public List<Transform> GetWaypoints()

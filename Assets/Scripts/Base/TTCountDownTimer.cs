@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEventUtils;
+using UnityEngine.UI;
 
-public enum TTCountDownType { INT_TIME, FLOAT_TIME }
+public enum TTCountDownType { CD_TIME, CLOCK_TIME }
 
 public class TTCountDownTimer : MonoBehaviour 
 {
-	[HideInInspector] public UEvent_i intRealTimeEvent = new UEvent_i();
+	[SerializeField] private TTCountDownType _currentCountDownType;
+	[SerializeField] private Text _showTimeText;
 	[HideInInspector] public bool isBeginTimer;
-	public TTCountDownType currentCountDownType;
 
 	private float countDownTime;
 	private int intRealTime;      // 单位 秒
@@ -20,12 +21,8 @@ public class TTCountDownTimer : MonoBehaviour
 		get { return m_speedFactor; }
 		set { m_speedFactor = value; }
 	}
-	private Action<string> realTimeEvent;
 
-	void Start () 
-	{
-		
-	}
+	void Start () { }
 	
 	void Update () 
 	{
@@ -39,28 +36,26 @@ public class TTCountDownTimer : MonoBehaviour
 			if (countDownTime == 0)
 				isBeginTimer = false;
 			
-			if (currentCountDownType == TTCountDownType.INT_TIME)
+			if (_currentCountDownType == TTCountDownType.CD_TIME)
 				CheckRealTime();
 			
-			if (currentCountDownType == TTCountDownType.FLOAT_TIME)
+			if (_currentCountDownType == TTCountDownType.CLOCK_TIME)
 				CheckFloatTime();
 		}
 	}
 
-	public void InitCoutDownTimer(TTCountDownType cdType,float cdTime, Action<string> cdEvent, int cdSpeed=1)
+	public void InitCoutDownTimer(float cdTime, int cdSpeed=1)
 	{
-		currentCountDownType = cdType;
 		countDownTime = cdTime;
 		speedFactor = cdSpeed;
-		realTimeEvent = cdEvent;
 
-		if (currentCountDownType == TTCountDownType.INT_TIME)
+		if (_currentCountDownType == TTCountDownType.CD_TIME)
 		{
 			intRealTime = (int)countDownTime;
 			CheckRealTime();
 		}
 
-		if (currentCountDownType == TTCountDownType.FLOAT_TIME)
+		if (_currentCountDownType == TTCountDownType.CLOCK_TIME)
 			CheckFloatTime();
 	}
 
@@ -70,8 +65,7 @@ public class TTCountDownTimer : MonoBehaviour
 		if (curTime <= intRealTime)
 		{
 			intRealTime = curTime;
-			if (realTimeEvent != null)
-				realTimeEvent(intRealTime.ToString());
+			ShowTimeText(intRealTime.ToString());
 		}
 	}
 
@@ -84,7 +78,11 @@ public class TTCountDownTimer : MonoBehaviour
 			fixSecondTime = "0" + fixSecondTime;
 
 		string showTime = string.Format("{0} : {1}", minuteTime, fixSecondTime);
-		if (realTimeEvent != null)
-			realTimeEvent(showTime);
+		ShowTimeText(showTime);
+	}
+
+	void ShowTimeText(string timeText)
+	{
+		_showTimeText.text = timeText;
 	}
 }

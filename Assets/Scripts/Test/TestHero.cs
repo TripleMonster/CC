@@ -11,7 +11,7 @@ public class TestHero : MonoBehaviour
 	void Start () 
 	{
 		m_CountDownTimer = GetComponent<TTCountDownTimer>();
-		m_CountDownTimer.InitCoutDownTimer(TTCountDownType.FLOAT_TIME, 180, UpdateCountDownText);
+		m_CountDownTimer.InitCoutDownTimer(180);
 	}
 	
 	void Update () 
