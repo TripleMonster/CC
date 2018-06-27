@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BattlePanelUIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3858ccb42c2fe4bdb9ec3e8b164cbfce, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 624f13bc3e9804f938d80751fc4bdd9f, type: 3}
+  - {fileID: 21300000, guid: 063fdc0f3e7a04cdab988ada11bb149a, type: 3}
+  - {fileID: 21300000, guid: a9f556b6647fa4717a74fb9d67abb0c6, type: 3}
+  - {fileID: 21300000, guid: 7df59c0653307458abe01426c693084e, type: 3}
+  - {fileID: 21300000, guid: 5d3bc71ba247d431f9d81f4fa1d11355, type: 3}
+  - {fileID: 21300000, guid: 6e85216bafd3e4c6eaf37bb3a3c49520, type: 3}
+  - {fileID: 21300000, guid: c9ab313f008d2490aaa2f34a07c4f61d, type: 3}
+  - {fileID: 21300000, guid: b31733a63917e42f9bddf9582ad9c1d9, type: 3}
+  - {fileID: 21300000, guid: a0bd9f8c0d20c4d6696c35f5a99f12ff, type: 3}
+  - {fileID: 21300000, guid: e3cd95d8e623243a69ee2492299fd1cd, type: 3}
+  - {fileID: 21300000, guid: d4733f47a863443748a23b2f5b2938be, type: 3}
+  - {fileID: 21300000, guid: 9ed3340a7c1bd4b51b73402112478d55, type: 3}
+  - {fileID: 21300000, guid: c727c7c86e32c4c7eb9622a7e1c928b6, type: 3}
+  - {fileID: 21300000, guid: ca00bceb6db3d412db4d92d1faad88c5, type: 3}
+  - {fileID: 21300000, guid: e4d19064552684a27b2407d1b62a7925, type: 3}
+  - {fileID: 21300000, guid: 03194cddbefad4f3fb12228d1631aed4, type: 3}
+  - {fileID: 21300000, guid: dbc70bdda9f114fe3a1228924f0b720e, type: 3}
+  - {fileID: 21300000, guid: cdf3fcf3d3b774499886c1415d950248, type: 3}
+  - {fileID: 21300000, guid: 18e08ab24c2554a5297e5813f097b17a, type: 3}
+  - {fileID: 21300000, guid: f63e3e832525840aaba4bc77a77856fc, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ui_sprite_489
+  - ui_sprite_495
+  - ui_sprite_513
+  - ui_sprite_505
+  - ui_sprite_170
+  - ui_sprite_510
+  - ui_sprite_507
+  - ui_sprite_508
+  - ui_sprite_191
+  - ui_sprite_517
+  - ui_sprite_497
+  - ui_sprite_180
+  - ui_sprite_512
+  - ui_sprite_405
+  - ui_sprite_811
+  - ui_sprite_498
+  - ui_sprite_340
+  - ui_sprite_337
+  - ui_sprite_488
+  - ui_sprite_479
+  m_Tag: BattlePanelUIAtlas
+  m_IsVariant: 0

@@ -12,16 +12,6 @@ public class Loading : MonoBehaviour
 
     [HideInInspector]public UEvent_f loadingCompleted = new UEvent_f();
 
-	void Start () 
-    {
-		
-	}
-	
-	void Update () 
-    {
-		
-	}
-
     public void LoadingConfig()
     {
         ResourcesManager.Instance.LoadAsset<TextAsset>("Configs/cardconfig", LoadingConfigCompleted, (result) => {
