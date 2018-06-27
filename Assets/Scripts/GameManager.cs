@@ -27,11 +27,6 @@ public class GameManager : MonoSigleton<GameManager> {
         _countDownTimer.InitCoutDownTimer(180);
 	}
 
-	void Update () 
-    {
-		
-	}
-
     int slideSpeed = 0;
     private void FixedUpdate()
     {
