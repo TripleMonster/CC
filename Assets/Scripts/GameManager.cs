@@ -15,7 +15,6 @@ public class GameManager : MonoSigleton<GameManager> {
 
     [HideInInspector]public TTMainThreadDispatcher mainThreadDispatcher;
 
-
     private void Awake()
     {
         mainThreadDispatcher = GetComponent<TTMainThreadDispatcher>();

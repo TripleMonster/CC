@@ -58,7 +58,7 @@ public class Loading : MonoBehaviour
 
     void LoadingConfigCompleted(TextAsset textAsset)
     {
-            switch(textAsset.name)
+        switch(textAsset.name)
         {
             case "cardconfig":
                 DataManager.Instance.SetCardsByTextAsset(textAsset);
