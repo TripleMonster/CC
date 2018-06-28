@@ -52,6 +52,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: dbc70bdda9f114fe3a1228924f0b720e, type: 3}
   - {fileID: 21300000, guid: cdf3fcf3d3b774499886c1415d950248, type: 3}
   - {fileID: 21300000, guid: 18e08ab24c2554a5297e5813f097b17a, type: 3}
+  - {fileID: 21300000, guid: 64029b6cb884b412a850ce93fe77f996, type: 3}
   - {fileID: 21300000, guid: f63e3e832525840aaba4bc77a77856fc, type: 3}
   m_PackedSpriteNamesToIndex:
   - ui_sprite_489
@@ -73,6 +74,7 @@ SpriteAtlas:
   - ui_sprite_340
   - ui_sprite_337
   - ui_sprite_488
+  - ui_sprite_640
   - ui_sprite_479
   m_Tag: BattlePanelUIAtlas
   m_IsVariant: 0
