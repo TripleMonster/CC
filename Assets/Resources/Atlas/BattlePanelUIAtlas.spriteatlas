@@ -33,17 +33,38 @@ SpriteAtlas:
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 211db2359f74e49d5ae93f39bf62f248, type: 3}
+  - {fileID: 21300000, guid: f2ae4b9a079844e9e90cd97c8c014217, type: 3}
+  - {fileID: 21300000, guid: 6484b8fbfd8db4b28bb43bf585426732, type: 3}
+  - {fileID: 21300000, guid: e42863dcc553741509be48dab908b10c, type: 3}
+  - {fileID: 21300000, guid: a896f65f5aa7b4e959f36de50316d019, type: 3}
+  - {fileID: 21300000, guid: 781ff789393164648865edd28053ef9f, type: 3}
+  - {fileID: 21300000, guid: e4e8b09273f394b4fbe2561ed05a51c7, type: 3}
+  - {fileID: 21300000, guid: a0cb4907bcdc441a79a74bc465c2ee2e, type: 3}
+  - {fileID: 21300000, guid: bb1b589d7c01a4b13821ae6f1462fe97, type: 3}
   - {fileID: 21300000, guid: 624f13bc3e9804f938d80751fc4bdd9f, type: 3}
   - {fileID: 21300000, guid: 063fdc0f3e7a04cdab988ada11bb149a, type: 3}
+  - {fileID: 21300000, guid: 0d58d1a7a603e4c65b81114987f0bcd8, type: 3}
+  - {fileID: 21300000, guid: 13f21aa3529af429a90c803fe6c6994a, type: 3}
+  - {fileID: 21300000, guid: ffe0a42fab4544fb390c893e992618fb, type: 3}
+  - {fileID: 21300000, guid: 8ed5af48fcd874d12957d3a093127fdf, type: 3}
+  - {fileID: 21300000, guid: f08a5e47e1b94421082d21527ccd8968, type: 3}
+  - {fileID: 21300000, guid: 217d874befc2e4ea5be4901afc8f82e4, type: 3}
+  - {fileID: 21300000, guid: f782ba45face248cf83b15af809c0ea2, type: 3}
+  - {fileID: 21300000, guid: 9e474481f48774a7291016ba8ec0dcc7, type: 3}
   - {fileID: 21300000, guid: a9f556b6647fa4717a74fb9d67abb0c6, type: 3}
+  - {fileID: 21300000, guid: e3ff0d2d902284cac9ada024ebd4cd81, type: 3}
   - {fileID: 21300000, guid: 7df59c0653307458abe01426c693084e, type: 3}
   - {fileID: 21300000, guid: 5d3bc71ba247d431f9d81f4fa1d11355, type: 3}
   - {fileID: 21300000, guid: 6e85216bafd3e4c6eaf37bb3a3c49520, type: 3}
   - {fileID: 21300000, guid: c9ab313f008d2490aaa2f34a07c4f61d, type: 3}
   - {fileID: 21300000, guid: b31733a63917e42f9bddf9582ad9c1d9, type: 3}
+  - {fileID: 21300000, guid: de25db6b244f34b79b73896891cc70a5, type: 3}
   - {fileID: 21300000, guid: a0bd9f8c0d20c4d6696c35f5a99f12ff, type: 3}
   - {fileID: 21300000, guid: e3cd95d8e623243a69ee2492299fd1cd, type: 3}
+  - {fileID: 21300000, guid: 607a30333aed4499ea5074f0eeb237f1, type: 3}
   - {fileID: 21300000, guid: d4733f47a863443748a23b2f5b2938be, type: 3}
+  - {fileID: 21300000, guid: c5716d28c6b00442e8359a6e72b4c37a, type: 3}
   - {fileID: 21300000, guid: 9ed3340a7c1bd4b51b73402112478d55, type: 3}
   - {fileID: 21300000, guid: c727c7c86e32c4c7eb9622a7e1c928b6, type: 3}
   - {fileID: 21300000, guid: ca00bceb6db3d412db4d92d1faad88c5, type: 3}
@@ -51,21 +72,43 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 03194cddbefad4f3fb12228d1631aed4, type: 3}
   - {fileID: 21300000, guid: dbc70bdda9f114fe3a1228924f0b720e, type: 3}
   - {fileID: 21300000, guid: cdf3fcf3d3b774499886c1415d950248, type: 3}
+  - {fileID: 21300000, guid: 88bc84e7e75d44a10a724c58d1b4823f, type: 3}
   - {fileID: 21300000, guid: 18e08ab24c2554a5297e5813f097b17a, type: 3}
   - {fileID: 21300000, guid: 64029b6cb884b412a850ce93fe77f996, type: 3}
   - {fileID: 21300000, guid: f63e3e832525840aaba4bc77a77856fc, type: 3}
   m_PackedSpriteNamesToIndex:
+  - league-champion-ultimate
+  - league-champion-1
+  - league-champion-grand
+  - league-master-1
+  - league-master-2
+  - league-master-3
+  - league-challenger-3
+  - league-challeger-1
+  - league-challenger-2
   - ui_sprite_489
   - ui_sprite_495
+  - chest-draft
+  - chest-legendary
+  - chest-supermagical
+  - chest-magical
+  - chest-epic
+  - chest-giant
+  - chest-silver
+  - chest-gold
   - ui_sprite_513
+  - chest-wooden
   - ui_sprite_505
   - ui_sprite_170
   - ui_sprite_510
   - ui_sprite_507
   - ui_sprite_508
+  - ui_sprite_161
   - ui_sprite_191
   - ui_sprite_517
+  - ui_sprite_203
   - ui_sprite_497
+  - ui_sprite_099
   - ui_sprite_180
   - ui_sprite_512
   - ui_sprite_405
@@ -73,6 +116,7 @@ SpriteAtlas:
   - ui_sprite_498
   - ui_sprite_340
   - ui_sprite_337
+  - ui_sprite_329
   - ui_sprite_488
   - ui_sprite_640
   - ui_sprite_479
