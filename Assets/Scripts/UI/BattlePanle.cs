@@ -14,4 +14,9 @@ public class BattlePanle : MonoBehaviour
 	{
 		
 	}
+
+	void UpdateAllUI()
+	{
+		
+	}
 }
