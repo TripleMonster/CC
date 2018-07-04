@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class BattleUITop : MonoBehaviour 
 {
@@ -17,13 +19,16 @@ public class BattleUITop : MonoBehaviour
 	[SerializeField] private Text _GemsNum;
 	#endregion
 
+	private UserProfile userProfile;
+
 	private void Start() 
 	{
-		UpdateLevel();	
+			
 	}
 
 	public void UpdateUI(int type)
 	{
+		userProfile = DataManager.Instance.GetUserProfile();
 		switch (type)
 		{
 			case 1:
@@ -40,7 +45,6 @@ public class BattleUITop : MonoBehaviour
 
 	void UpdateLevel()
 	{
-		UserProfile userProfile = DataManager.Instance.GetUserProfile();
 		_LevelNum.text = userProfile.userLevel.ToString();
 		_ExperienceNum.text = userProfile.userExperience.ToString() + "/800000";
 		_ExperienceSlider.value = userProfile.userExperience / 80000;
@@ -48,21 +52,35 @@ public class BattleUITop : MonoBehaviour
 
 	void UpdateGold()
 	{
-		_GoldNum.text = DataManager.Instance.GetUserProfile().userGold.ToString();
+		int oldGold = Convert.ToInt32(_GoldNum.text);
+		int newGold = userProfile.userGold;
+		NumberScrollAnimation(oldGold, newGold, _GoldNum);
 	}
 
 	void UpdateGems()
 	{
-		_GemsNum.text = DataManager.Instance.GetUserProfile().userGems.ToString();
+		int oldGems = Convert.ToInt32(_GemsNum.text);
+		int newGmes = userProfile.userGems;
+		NumberScrollAnimation(oldGems, newGmes, _GemsNum);
+	}
+
+	void NumberScrollAnimation(int oldNumber, int newNumber, Text numberText)
+	{
+		Sequence scrollSeq = DOTween.Sequence();
+		scrollSeq.SetAutoKill(false);
+		scrollSeq.Append(DOTween.To(delegate(float value){
+			var temp = Math.Floor(value);
+			numberText.text = temp.ToString();
+		}, (float)oldNumber, (float)newNumber, 0.4f));
 	}
 
 	public void OnBuyGold()
 	{
-
+		DataManager.Instance.ChangeGoldCount();
 	}
 
 	public void OnBuyGems()
 	{
-
+		DataManager.Instance.ChangeGemsCount();
 	}
 }

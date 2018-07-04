@@ -30,6 +30,7 @@ public class DataManager : Singleton<DataManager>
     {
         if (userProfile == null)
         {
+            Debug.Log("创建userprofile");
             userProfile = new UserProfile();
             userProfile.userName = "三兽";
             userProfile.userClanName = "北京一醉一陶然";
@@ -48,6 +49,18 @@ public class DataManager : Singleton<DataManager>
     public UserProfile GetUserProfile()
     {
         return userProfile;
+    }
+
+    public void ChangeGoldCount()
+    {
+        userProfile.userGold += 100;
+        userProfileEvent.Invoke(2);
+    }
+
+    public void ChangeGemsCount()
+    {
+        userProfile.userGems += 100;
+        userProfileEvent.Invoke(3);
     }
     #endregion
 

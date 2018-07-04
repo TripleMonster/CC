@@ -170,8 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528b4a1b834674851a50cd245d071328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentCountDownType: 0
+  _showTimeText: {fileID: 0}
   isBeginTimer: 0
-  realTime: 0
 --- !u!114 &212619906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41814536982274fed814dd88e701a7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countDownText: {fileID: 316098418}
 --- !u!1 &316098416
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 212619906}
-        m_MethodName: BeginCountDown
+        m_MethodName: TestSocket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

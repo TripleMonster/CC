@@ -10,7 +10,8 @@ public class BattlePanle : MonoBehaviour
 
 	void Start () 
 	{
-		
+		DataManager.Instance.SetUserProfile();
+		RegiserDataToUIEvent();
 	}
 	
 	void Update () 
