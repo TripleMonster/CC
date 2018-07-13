@@ -12,6 +12,7 @@ public class BattleUITop : MonoBehaviour
 	[SerializeField] private Slider _ExperienceSlider;
 	[SerializeField] private Text _ExperienceNum;
 	[SerializeField] private TextMeshProUGUI _LevelNum;
+	[SerializeField] private Image _GoldIcon;
 	#endregion
 
 	#region gold and gems
@@ -23,7 +24,7 @@ public class BattleUITop : MonoBehaviour
 
 	private void Start() 
 	{
-			
+		
 	}
 
 	public void UpdateUI(int type)
@@ -72,11 +73,35 @@ public class BattleUITop : MonoBehaviour
 			var temp = Math.Floor(value);
 			numberText.text = temp.ToString();
 		}, (float)oldNumber, (float)newNumber, 0.4f));
+		
 	}
 
 	public void OnBuyGold()
 	{
-		DataManager.Instance.ChangeGoldCount();
+		// DataManager.Instance.ChangeGoldCount();
+		Canvas canvasObj = GameObject.FindObjectOfType<Canvas>();
+		for (int i = 0; i < 5; i++)
+		{
+			Image goldImg = Instantiate(_GoldIcon);
+			goldImg.transform.localScale -= new Vector3(0.5f, 0.5f, 0);
+			goldImg.transform.position = new Vector3(500, 500, 0);
+			goldImg.transform.parent = canvasObj.transform;
+			
+			Sequence gSeq = DOTween.Sequence();
+			Vector3 offset = new Vector3();
+			if (i < 2)
+			{
+				offset = goldImg.transform.position + new Vector3(100, 50*(i+1), 0);
+			}
+			else
+			{
+				offset = goldImg.transform.position + new Vector3(-100, 50*(i-1), 0);
+			}
+			
+			gSeq.Append(goldImg.transform.DOMove(offset, 1f));
+			gSeq.Join(goldImg.transform.DORotate(new Vector3(0, 360, 0), 1f).SetRelative().SetLoops(-1, LoopType.Yoyo));
+			//gSeq.Append(goldImg.transform.DOMove(new Vector3(0, 500 + 500, 0), 0.8f));
+		}
 	}
 
 	public void OnBuyGems()

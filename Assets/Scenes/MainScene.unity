@@ -6348,6 +6348,7 @@ MonoBehaviour:
   _ExperienceSlider: {fileID: 849406562}
   _ExperienceNum: {fileID: 98494857}
   _LevelNum: {fileID: 1979260993}
+  _GoldIcon: {fileID: 1896727749}
   _GoldNum: {fileID: 1913059344}
   _GemsNum: {fileID: 1906309927}
 --- !u!1 &1625037846
