@@ -44,13 +44,36 @@ public class TestHero : MonoBehaviour
 			Sequence gSeq = DOTween.Sequence();
 			Vector3 curPosition = goldImg.transform.position;
 			Vector3 offset = new Vector3();
-			Vector3 offset2 = new Vector3();
 
-			int random = TTRandom.BetterRandom(1, 5);
-			Debug.Log("random--------------" + random);
-			offset = curPosition + new Vector3(20*(random-2), 20*(random+1), 0);
-			offset2 = curPosition + new Vector3(10*(random-2), -10*(random+1), 0);
-			gSeq.Append(goldImg.transform.DOMove(offset2, 0.3f));
+			int offsetX = 0, offsetY = 0;
+			float factor = 3f;
+			if (i == 0)
+			{
+				offsetX = 15; 
+				offsetY = 10;
+			}
+			else if(i == 1)
+			{
+				offsetX = 15;
+				offsetY = -10;
+			}
+			else if (i == 2)
+			{
+				offsetX = -15;
+				offsetY = 10;
+			}
+			else if (i == 3)
+			{
+				offsetX = -15;
+				offsetY = -10;
+			}
+			else if (i == 4)
+			{
+				offsetX = 0;
+				offsetY = 20;
+			}
+
+			offset = curPosition + new Vector3(offsetX * factor, offsetY * factor, 0);
 			gSeq.Append(goldImg.transform.DOMove(offset, 0.3f));
 			gSeq.Join(goldImg.transform.DORotate(new Vector3(360, 360, 0), 0.5f).SetRelative().SetLoops(-1, LoopType.Yoyo));
 			gSeq.Append(goldImg.transform.DOMove(new Vector3(0, 500 + 500, 0), 0.8f));
