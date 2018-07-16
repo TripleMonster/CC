@@ -28,7 +28,7 @@ public class TestHero : MonoBehaviour
 
 	public void OnGetGold()
 	{
-		StartCoroutine(GoldAnimate(1));
+		TTCollectResourcesAnimation.Instance.PlayAnimation(ResourcesType.EXPERIENCE, new Vector3(500, 500, 0), new Vector3(0, 500 + 500, 0));
 	}
 
 	IEnumerator GoldAnimate(int index)
@@ -72,6 +72,7 @@ public class TestHero : MonoBehaviour
 				offsetX = 0;
 				offsetY = 20;
 			}
+
 
 			offset = curPosition + new Vector3(offsetX * factor, offsetY * factor, 0);
 			gSeq.Append(goldImg.transform.DOMove(offset, 0.3f));
