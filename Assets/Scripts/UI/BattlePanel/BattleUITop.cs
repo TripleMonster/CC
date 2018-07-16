@@ -22,6 +22,11 @@ public class BattleUITop : MonoBehaviour
 	[SerializeField] private Text _GemsNum;
 	#endregion
 
+	#region profile
+	[SerializeField] private Image _TrophyIcon;
+	[SerializeField] private Text _TrophyNum;	
+	#endregion
+
 	private UserProfile userProfile;
 
 	private void Start() 
@@ -42,6 +47,9 @@ public class BattleUITop : MonoBehaviour
 				break;
 			case 3:
 				UpdateGems();
+				break;
+			case 4:
+				UpdateTrophy();
 				break;
 		}
 	}
@@ -68,6 +76,15 @@ public class BattleUITop : MonoBehaviour
 		int newGmes = userProfile.userGems;
 		TTCollectResourcesAnimation.Instance.PlayAnimation(ResourcesType.GEMS, new Vector3(500, 500, 0), _GemsIcon.transform.position, ()=> {
 			NumberScrollAnimation(oldGems, newGmes, _GemsNum);
+		});
+	}
+
+	void UpdateTrophy()
+	{
+		int oldTrophy = Convert.ToInt32(_TrophyNum.text);
+		int newTrophy = userProfile.userTrophy;
+		TTCollectResourcesAnimation.Instance.PlayAnimation(ResourcesType.TROPHY, new Vector3(500, 500, 0), _TrophyIcon.transform.position, ()=> {
+			NumberScrollAnimation(oldTrophy, newTrophy, _TrophyNum);
 		});
 	}
 

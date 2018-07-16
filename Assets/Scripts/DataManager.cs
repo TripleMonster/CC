@@ -38,6 +38,7 @@ public class DataManager : Singleton<DataManager>
             userProfile.userExperience = 39308;
             userProfile.userGold = 8240;
             userProfile.userGems = 1024;
+            userProfile.userTrophy = 4217;
         }
         else
         {   
@@ -61,6 +62,12 @@ public class DataManager : Singleton<DataManager>
     {
         userProfile.userGems += 100;
         userProfileEvent.Invoke(3);
+    }
+
+    public void ChangeTrophyCount()
+    {
+        userProfile.userTrophy += 30;
+        userProfileEvent.Invoke(4);
     }
     #endregion
 

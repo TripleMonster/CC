@@ -7,13 +7,14 @@ using DG.Tweening;
 
 namespace TT
 {
-	public enum ResourcesType { GOLD = 30, GEMS = 31, EXPERIENCE = 32} 
+	public enum ResourcesType { GOLD = 30, GEMS = 31, EXPERIENCE = 32, TROPHY = 33 } 
 
 	public class TTCollectResourcesAnimation : MonoSigleton<TTCollectResourcesAnimation> 
 	{
 		[SerializeField] private Image _GoldIcon;
 		[SerializeField] private Image _GemsIcon;
 		[SerializeField] private Image _ExperienceIcon;
+		[SerializeField] private Image _TrophyIcon;
 
 		ResourcesType currentType;
 		Vector3 beginPosition;
@@ -87,6 +88,8 @@ namespace TT
 				resourcesImg = Instantiate(_GemsIcon);
 			else if (currentType == ResourcesType.EXPERIENCE)
 				resourcesImg = Instantiate(_ExperienceIcon);
+			else if (currentType == ResourcesType.TROPHY)
+				resourcesImg = Instantiate(_TrophyIcon);
 			
 			resourcesImg.transform.localScale -= new Vector3(0.5f, 0.5f, 0);
 			resourcesImg.transform.position = this.beginPosition;

@@ -6052,6 +6052,7 @@ MonoBehaviour:
   _GoldIcon: {fileID: 1805950261}
   _GemsIcon: {fileID: 219862969}
   _ExperienceIcon: {fileID: 197389582}
+  _TrophyIcon: {fileID: 0}
 --- !u!1 &1401938535
 GameObject:
   m_ObjectHideFlags: 0
@@ -6601,6 +6602,8 @@ MonoBehaviour:
   _GemsIcon: {fileID: 587139095}
   _GoldNum: {fileID: 1913059344}
   _GemsNum: {fileID: 1906309927}
+  _TrophyIcon: {fileID: 0}
+  _TrophyNum: {fileID: 0}
 --- !u!1 &1625037846
 GameObject:
   m_ObjectHideFlags: 0

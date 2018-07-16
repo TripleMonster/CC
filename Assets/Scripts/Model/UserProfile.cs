@@ -8,4 +8,5 @@ public class UserProfile
     public int userExperience;
     public int userGold;
     public int userGems;
+    public int userTrophy;
 }
