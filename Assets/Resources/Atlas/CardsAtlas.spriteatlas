@@ -4,7 +4,8 @@
 SpriteAtlas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: CardsAtlas
   m_EditorData:
     serializedVersion: 2
@@ -41,20 +42,10 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 606db0fe4528141e9aa3ec74af545c08, type: 3}
+    totalSpriteSurfaceArea: 7893072
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 02f81d821f4024bca98fb76bc9d43d43, type: 3}
-  - {fileID: 21300000, guid: bae0b954b47f549e98d16db261a1952f, type: 3}
-  - {fileID: 21300000, guid: b605ec65d901743e082864c885bdcc9e, type: 3}
-  - {fileID: 21300000, guid: ae619d362b06d4dc5ade859828425419, type: 3}
-  - {fileID: 21300000, guid: 9dbc5657475c2431087dba3596a3a0b7, type: 3}
-  - {fileID: 21300000, guid: e17c567ae86c84e6bb1c66861172ea8d, type: 3}
-  - {fileID: 21300000, guid: 62ffbadd165304a349f640a2ed2be5a5, type: 3}
-  - {fileID: 21300000, guid: ff71ac1eec6b7469f93533c77aa7360a, type: 3}
-  - {fileID: 21300000, guid: bd6e1bbe4a9344bc39c2f2a737e36a69, type: 3}
-  - {fileID: 21300000, guid: b47a6f0f392974a18886bc4bf4cee3bb, type: 3}
-  - {fileID: 21300000, guid: cacd90bf0dc4d41019bf3e2e6ffb23ed, type: 3}
   - {fileID: 21300000, guid: 5c836b40d3311426f968ac01564f9326, type: 3}
   - {fileID: 21300000, guid: b40500907f92640508db6858bf7d6dd6, type: 3}
   - {fileID: 21300000, guid: 17e9b0d0f305c45358ccc6d3173504bc, type: 3}
@@ -65,27 +56,33 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0328a5b19090343b4b6d74b3b0ea23ad, type: 3}
   - {fileID: 21300000, guid: 5d7f2e420ac074dd7b6f67a73323068d, type: 3}
   - {fileID: 21300000, guid: 829e6482c532c4234ab1c378752cab09, type: 3}
+  - {fileID: 21300000, guid: 02f81d821f4024bca98fb76bc9d43d43, type: 3}
   - {fileID: 21300000, guid: 8f3d19a29c0bb41a59609dc41de88040, type: 3}
   - {fileID: 21300000, guid: fbd4a013d5a8f448182165234031769d, type: 3}
   - {fileID: 21300000, guid: 82081f13e20584315abc030f19201542, type: 3}
   - {fileID: 21300000, guid: 88b449334a04b44cb80a30eb5699cc63, type: 3}
   - {fileID: 21300000, guid: 0e4214f3211024e16bebce9637b83300, type: 3}
   - {fileID: 21300000, guid: 89c69054022704af0bded743de0a7215, type: 3}
+  - {fileID: 21300000, guid: bae0b954b47f549e98d16db261a1952f, type: 3}
   - {fileID: 21300000, guid: 02741c74c4e2c4186a2027af82a136e2, type: 3}
   - {fileID: 21300000, guid: 3333b0b424d44405f9c638c7918915d3, type: 3}
+  - {fileID: 21300000, guid: b605ec65d901743e082864c885bdcc9e, type: 3}
   - {fileID: 21300000, guid: b509b0b515bd2457f8f9490f9a62a3bc, type: 3}
   - {fileID: 21300000, guid: 8de642d5a81d142bbb24cb05e28f0990, type: 3}
   - {fileID: 21300000, guid: 01db7dd5636754c28ba6c59dfdeb778d, type: 3}
   - {fileID: 21300000, guid: e7c64e06e552b487c8064e371aaca046, type: 3}
   - {fileID: 21300000, guid: 0a04ff066b3bf4990bbbc137fd4a8646, type: 3}
   - {fileID: 21300000, guid: 595c2c26afa284114ae4701604af1467, type: 3}
+  - {fileID: 21300000, guid: ae619d362b06d4dc5ade859828425419, type: 3}
   - {fileID: 21300000, guid: d0d0836681e2e47b6a900f6fba6d639e, type: 3}
   - {fileID: 21300000, guid: 3e86b376c580e4d0e9b9498e7945a945, type: 3}
   - {fileID: 21300000, guid: 9ea2c7b6b6a514ac69c85e8b87998fc4, type: 3}
   - {fileID: 21300000, guid: 47a29ab608a98449cb62ec98a1b7f25f, type: 3}
   - {fileID: 21300000, guid: 42ff1ed6d7b714ce189e68e566c66786, type: 3}
   - {fileID: 21300000, guid: 29987107f862843499a225cf2e1bc8e3, type: 3}
+  - {fileID: 21300000, guid: 9dbc5657475c2431087dba3596a3a0b7, type: 3}
   - {fileID: 21300000, guid: b917ee57170994d2b94fc0204aef1f3e, type: 3}
+  - {fileID: 21300000, guid: 33a40b97b869945bc8d91e35e7c1d62f, type: 3}
   - {fileID: 21300000, guid: 2dc64218b783c4fab821a0737a7328f7, type: 3}
   - {fileID: 21300000, guid: a9f0f718adf2b41acb3d7d2993d4cda7, type: 3}
   - {fileID: 21300000, guid: db87e00921d9e4fb5887789dc6387bd6, type: 3}
@@ -94,6 +91,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fb800599e99e04352ac6e137259377be, type: 3}
   - {fileID: 21300000, guid: 059075b95dc024a8aba393fa5aad6002, type: 3}
   - {fileID: 21300000, guid: 98483c4ac7adc44abb6350deaedcb766, type: 3}
+  - {fileID: 21300000, guid: e17c567ae86c84e6bb1c66861172ea8d, type: 3}
   - {fileID: 21300000, guid: 389e1eba946da411f9fe9d44cc6e7ce9, type: 3}
   - {fileID: 21300000, guid: ce656cea314fd40528e1a66b8364fda4, type: 3}
   - {fileID: 21300000, guid: 3aa2fdfa47f5f41d892713d32129936e, type: 3}
@@ -110,24 +108,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: be11949dc6ce3465bb6cb9891b633493, type: 3}
   - {fileID: 21300000, guid: 21f532bd79f744b73a5ce70051d42d8d, type: 3}
   - {fileID: 21300000, guid: c888fccd4d6844fc8b7d078166783029, type: 3}
+  - {fileID: 21300000, guid: 62ffbadd165304a349f640a2ed2be5a5, type: 3}
+  - {fileID: 21300000, guid: 260b29ed242154e72a8919218c36effe, type: 3}
   - {fileID: 21300000, guid: b89c9ced5d2fe415989bae4c6f52c8c4, type: 3}
   - {fileID: 21300000, guid: 697f8c0ec915b4080a458a5cd39aab64, type: 3}
+  - {fileID: 21300000, guid: ff71ac1eec6b7469f93533c77aa7360a, type: 3}
   - {fileID: 21300000, guid: 79eb895e9faab4906a723229d1d6e100, type: 3}
   - {fileID: 21300000, guid: e717b3ae1c3374ef7b95c249846716fc, type: 3}
-  - {fileID: 21300000, guid: 33a40b97b869945bc8d91e35e7c1d62f, type: 3}
-  - {fileID: 21300000, guid: 260b29ed242154e72a8919218c36effe, type: 3}
+  - {fileID: 21300000, guid: bd6e1bbe4a9344bc39c2f2a737e36a69, type: 3}
+  - {fileID: 21300000, guid: b47a6f0f392974a18886bc4bf4cee3bb, type: 3}
+  - {fileID: 21300000, guid: cacd90bf0dc4d41019bf3e2e6ffb23ed, type: 3}
   m_PackedSpriteNamesToIndex:
-  - bandit
-  - graveyard
-  - lumberjack
-  - lava-hound
-  - sparky
-  - the-log
-  - princess
-  - electro-wizard
-  - miner
-  - ice-wizard
-  - inferno-dragon
   - xbow
   - fireball
   - wizard
@@ -138,27 +129,33 @@ SpriteAtlas:
   - minion-horde
   - royal-giant
   - bomb-tower
+  - bandit
   - hog-rider
   - balloon
   - mirror
   - dart-goblin
   - knight
   - battle-ram
+  - graveyard
   - rocket
   - cannon
+  - lumberjack
   - goblin-hut
   - giant-skeleton
   - skeletons
   - prince
   - three-musketeers
   - archers
+  - lava-hound
   - musketeer
   - valkyrie
   - goblin-gang
   - ice-spirit
   - goblin-barrel
   - goblins
+  - sparky
   - barbarians
+  - tesla
   - mortar
   - mini-pekka
   - freeze
@@ -167,6 +164,7 @@ SpriteAtlas:
   - tornado
   - poison
   - baby-dragon
+  - the-log
   - elite-barbarians
   - witch
   - giant
@@ -183,11 +181,15 @@ SpriteAtlas:
   - tombstone
   - skeleton-army
   - bowler
+  - princess
+  - arrows
   - clone
   - bomber
+  - electro-wizard
   - spear-goblins
   - dark-prince
-  - tesla
-  - arrows
+  - miner
+  - ice-wizard
+  - inferno-dragon
   m_Tag: CardsAtlas
   m_IsVariant: 0
