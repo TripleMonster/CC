@@ -29,5 +29,6 @@ namespace UnityEventUtils {
     public class UEvent_by_i64_i64 : UnityEvent<byte, Int64, Int64> { }
 
     public class UEvent_by_f_f_f : UnityEvent<byte, float, float, float> { }
+    public class UEvent_V3 : UnityEvent<Vector3> { }
 }
 

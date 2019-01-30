@@ -28,7 +28,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
 
     private void Awake()
     {
-        cardImageRT = GetComponent<Image>().rectTransform;   
+        cardImageRT = GetComponent<Image>().rectTransform;
     }
 
     private void Start()
@@ -36,7 +36,7 @@ public class UIDragButton : UIButton, IBeginDragHandler, IDragHandler, IEndDragH
         currentCardSelectedState = CardSelectedState.NORMAL;
 	}
 
-    void CreateHeroInstance(Vector3 position) 
+    void CreateHeroInstance(Vector3 position)
     {
         dragingHero = TTPoolsManager.Instance.GetPrefabFromPool(this.cardName).gameObject;
         Vector3 screenPos = Camera.main.WorldToScreenPoint(dragingHero.transform.position);
