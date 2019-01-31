@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEventUtils;
 
 [RequireComponent(typeof(Image))]
 public class DragButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -10,6 +11,8 @@ public class DragButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public Canvas _Canvas;
     public GameObject _ArmysObj;
     public Sprite _ArmySprite;
+
+    public UEvent_i DropEvent = new UEvent_i();
 
     private RectTransform mDragImageRT;
     private Vector3 mDragImagePosition;
@@ -96,9 +99,7 @@ public class DragButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // if (mDragingObj != null)
-        //     Destroy(mDragingObj);
-        
-        // mDragingObj = null;
+        if (mDragingObj != null)
+            DropEvent.Invoke(1);
     }
 }

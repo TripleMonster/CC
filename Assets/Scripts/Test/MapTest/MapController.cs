@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     public List<RegionController> _regionsList;
+    public List<DragButton> _ArmyButtonList;
 
     int mCurSelectedID = 0;
 
@@ -12,9 +13,18 @@ public class MapController : MonoBehaviour
     {
         if (_regionsList != null) 
         {
-            foreach (var item in _regionsList)
+            foreach (var region in _regionsList)
             {
-                item._SelectedEvent.AddListener(OnSelectedRegionByID);
+                region._SelectedEvent.AddListener(OnSelectedRegionByID);
+            }
+        }
+
+
+        if (_ArmyButtonList != null)
+        {
+            foreach (var armyButton in _ArmyButtonList)
+            {
+                armyButton.DropEvent.AddListener(OnArmyDroped);
             }
         }
     }
@@ -41,5 +51,10 @@ public class MapController : MonoBehaviour
         }
 
         mCurSelectedID = id;
+    }
+
+    public void OnArmyDroped(int i)
+    {
+        
     }
 }
