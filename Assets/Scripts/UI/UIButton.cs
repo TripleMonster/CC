@@ -20,6 +20,4 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     virtual public void OnPointerUp(PointerEventData eventData){
         
     }
-
-
 }
